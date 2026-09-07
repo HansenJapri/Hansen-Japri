@@ -1,94 +1,79 @@
 import { motion } from 'framer-motion'
-import { GraduationCap, Briefcase, Trophy } from 'lucide-react'
+import { Check, GraduationCap, Briefcase, Trophy } from 'lucide-react'
 
 const typeConfig = {
-  education: {
-    icon: GraduationCap,
-    color: 'text-blue-400',
-    bg: 'bg-blue-500/10',
-    border: 'border-blue-500/30',
-    dotColor: 'bg-blue-400',
-  },
-  work: {
-    icon: Briefcase,
-    color: 'text-accent-light',
-    bg: 'bg-accent/10',
-    border: 'border-accent/30',
-    dotColor: 'bg-accent-light',
-  },
-  achievement: {
-    icon: Trophy,
-    color: 'text-amber-400',
-    bg: 'bg-amber-500/10',
-    border: 'border-amber-500/30',
-    dotColor: 'bg-amber-400',
-  },
+  education: { icon: GraduationCap, label: 'Education' },
+  work: { icon: Briefcase, label: 'Experience' },
+  achievement: { icon: Trophy, label: 'Achievement' },
 }
 
-export default function TimelineItem({ item, index, isLeft }) {
+const MONTHS = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+]
+
+/* Dates arrive as "2024-01", "2026-07-24" or the literal "Present". */
+function formatDate(value) {
+  if (!value) return ''
+  if (!/^\d{4}-\d{2}/.test(value)) return value
+  const [year, month] = value.split('-')
+  return `${MONTHS[Number(month) - 1]} ${year}`
+}
+
+export default function TimelineItem({ item, index = 0 }) {
   const config = typeConfig[item.type] || typeConfig.work
+  const Icon = config.icon
+  const isOngoing = item.endDate === 'Present'
+  const range = `${formatDate(item.startDate)} — ${formatDate(item.endDate)}`
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative flex items-start gap-8 md:gap-0 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ delay: Math.min(index, 4) * 0.07, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="rounded-2xl bg-surface-low border border-line p-5 sm:p-8 transition-shadow duration-500 hover:shadow-float"
     >
-      {/* Dot */}
-      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 z-10">
-        <div className={`w-8 h-8 rounded-full ${config.bg} border-2 ${config.border} flex items-center justify-center`}>
-          <div className={`w-3 h-3 rounded-full ${config.dotColor}`} />
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className={`ml-16 md:ml-0 md:w-1/2 ${isLeft ? 'md:pr-16' : 'md:pl-16'}`}>
-        <div className={`group p-8 rounded-2xl bg-bg-card border border-border hover:${config.border} transition-all duration-500 hover:shadow-card-hover`}>
-          {/* Type Badge */}
-          <div className="flex items-center gap-3 mb-4">
-            <div className={`w-8 h-8 rounded-lg ${config.bg} flex items-center justify-center`}>
-              <config.icon className={`w-4 h-4 ${config.color}`} />
-            </div>
-            <span className={`text-xs font-semibold uppercase tracking-wider ${config.color}`}>
-              {item.type}
+      <div className="flex flex-col md:flex-row md:items-start gap-5 md:gap-10">
+        {/* Meta rail */}
+        <div className="md:w-1/3 md:shrink-0 space-y-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full kicker ${
+                isOngoing ? 'bg-moss-soft text-moss-ink' : 'bg-surface-high text-ink-muted'
+              }`}
+            >
+              {isOngoing && <span className="w-1.5 h-1.5 rounded-full bg-moss animate-pulse" />}
+              {range}
+            </span>
+            <span className="inline-flex items-center gap-1.5 kicker text-ink-faint">
+              <Icon className="w-3.5 h-3.5" strokeWidth={1.75} />
+              {config.label}
             </span>
           </div>
 
-          {/* Date */}
-          <div className="text-text-muted text-xs font-mono mb-3">
-            {item.startDate} — {item.endDate}
-          </div>
+          <h3 className="font-display text-title text-ink pt-1">{item.title}</h3>
+          <p className="text-body text-moss font-medium">{item.organization}</p>
+        </div>
 
-          {/* Title & Org */}
-          <h3 className="font-display text-lg font-bold text-text-primary mb-2">
-            {item.title}
-          </h3>
-          <p className="text-accent-light text-sm font-medium mb-4">
-            {item.organization}
-          </p>
+        {/* Narrative */}
+        <div className="md:w-2/3 space-y-4">
+          <p className="text-body text-ink-muted">{item.description}</p>
 
-          {/* Description */}
-          <p className="text-text-secondary text-sm leading-relaxed mb-5">
-            {item.description}
-          </p>
-
-          {/* Highlights */}
-          {item.highlights && item.highlights.length > 0 && (
-            <div className="flex flex-wrap gap-2.5">
+          {item.highlights?.length > 0 && (
+            <ul className="space-y-2">
               {item.highlights.map((highlight) => (
-                <span
-                  key={highlight}
-                  className={`inline-flex items-center px-3 py-1 rounded-lg text-xs font-medium ${config.bg} ${config.color} border ${config.border}`}
-                >
-                  {highlight}
-                </span>
+                <li key={highlight} className="flex items-start gap-2.5">
+                  <span className="mt-0.5 flex items-center justify-center w-4 h-4 shrink-0 rounded-full bg-moss-soft">
+                    <Check className="w-2.5 h-2.5 text-moss-ink" strokeWidth={2.5} />
+                  </span>
+                  <span className="text-note text-ink-muted">{highlight}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   )
 }

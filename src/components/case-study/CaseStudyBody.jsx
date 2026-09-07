@@ -1,96 +1,97 @@
 import { motion } from 'framer-motion'
-import { Target, Lightbulb, TrendingUp, Users, Wrench } from 'lucide-react'
-import { AnimatedSection } from '../ui/AnimatedSection'
+import { Lightbulb, TrendingUp, Users, Wrench } from 'lucide-react'
 
-const sectionConfig = [
-  {
-    key: 'impact',
-    icon: TrendingUp,
-    title: 'Impact & Results',
-    color: 'text-emerald-400',
-    bg: 'bg-emerald-500/10',
-    border: 'border-emerald-500/20',
-  },
-  {
-    key: 'learning',
-    icon: Lightbulb,
-    title: 'Key Learnings',
-    color: 'text-amber-400',
-    bg: 'bg-amber-500/10',
-    border: 'border-amber-500/20',
-  },
+const narrativeSections = [
+  { key: 'impact', index: '01', label: 'Outcome', title: 'Impact & Results', Icon: TrendingUp },
+  { key: 'learning', index: '02', label: 'Reflection', title: 'Key Learnings', Icon: Lightbulb },
 ]
 
-export default function CaseStudyBody({ project }) {
+function Panel({ children, delay = 0, className = '' }) {
   return (
-    <div className="section-container pt-20 pb-32">
-      <div className="max-w-4xl mx-auto space-y-14">
-        {/* Tech Stack */}
-        <AnimatedSection>
-          <div className="p-10 rounded-2xl bg-bg-card border border-border">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
-                <Wrench className="w-5 h-5 text-accent-light" />
-              </div>
-              <h2 className="font-display text-xl font-bold text-text-primary">Tech Stack</h2>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {project.techStack.map((tech) => (
+    <motion.section
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ delay, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className={`rounded-2xl bg-surface-low border border-line p-5 sm:p-8 md:p-10 ${className}`}
+    >
+      {children}
+    </motion.section>
+  )
+}
+
+function PanelHeading({ Icon, index, label, title }) {
+  return (
+    <div className="flex items-center gap-3 mb-5">
+      <span className="flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-moss-soft">
+        <Icon className="w-4.5 h-4.5 text-moss-ink" strokeWidth={1.75} />
+      </span>
+      <div>
+        {(index || label) && (
+          <span className="block kicker text-moss">
+            {index ? `${index} • ` : ''}
+            {label}
+          </span>
+        )}
+        <h2 className="font-display text-title text-ink">{title}</h2>
+      </div>
+    </div>
+  )
+}
+
+export default function CaseStudyBody({ project }) {
+  const hasTeam = project.team?.length > 0
+
+  return (
+    <div className="section-container pb-18 md:pb-26 space-y-4">
+      {/* Stack + team — the full tech list lives here, not truncated */}
+      <div className={`grid grid-cols-1 gap-4 ${hasTeam ? 'lg:grid-cols-2' : ''}`}>
+        <Panel>
+          <PanelHeading Icon={Wrench} label="Toolkit" title="Tech Stack" />
+          <div className="flex flex-wrap gap-2">
+            {project.techStack.map((tech) => (
+              <span
+                key={tech}
+                className="px-3.5 py-1.5 rounded-full bg-surface-high text-ink text-note border border-line"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </Panel>
+
+        {hasTeam && (
+          <Panel delay={0.08}>
+            <PanelHeading Icon={Users} label="Collaborators" title="Team" />
+            <div className="flex flex-wrap gap-2">
+              {project.team.map((member) => (
                 <span
-                  key={tech}
-                  className="px-4 py-2 rounded-xl bg-bg-tertiary border border-border text-text-primary text-sm font-mono hover:border-accent/30 hover:bg-accent/5 transition-all duration-300"
+                  key={member}
+                  className="inline-flex items-center gap-2 pl-1.5 pr-3.5 py-1.5 rounded-full bg-surface-high border border-line"
                 >
-                  {tech}
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-moss text-on-dark text-note font-semibold">
+                    {member.charAt(0)}
+                  </span>
+                  <span className="text-note text-ink">{member}</span>
                 </span>
               ))}
             </div>
-          </div>
-        </AnimatedSection>
-
-        {/* Team Members */}
-        {project.team && project.team.length > 0 && (
-          <AnimatedSection delay={0.1}>
-            <div className="p-10 rounded-2xl bg-bg-card border border-border">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-blue-400" />
-                </div>
-                <h2 className="font-display text-xl font-bold text-text-primary">Team</h2>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {project.team.map((member) => (
-                  <div
-                    key={member}
-                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-bg-tertiary border border-border"
-                  >
-                    <div className="w-6 h-6 rounded-full gradient-bg flex items-center justify-center text-white text-xs font-bold">
-                      {member.charAt(0)}
-                    </div>
-                    <span className="text-text-primary text-sm">{member}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </AnimatedSection>
+          </Panel>
         )}
-
-        {/* Impact & Learning Sections */}
-        {sectionConfig.map((section, idx) => (
-          <AnimatedSection key={section.key} delay={0.1 * (idx + 2)}>
-            <div className={`p-10 rounded-2xl bg-bg-card border ${section.border}`}>
-              <div className="flex items-center gap-4 mb-8">
-                <div className={`w-10 h-10 rounded-xl ${section.bg} flex items-center justify-center`}>
-                  <section.icon className={`w-5 h-5 ${section.color}`} />
-                </div>
-                <h2 className="font-display text-xl font-bold text-text-primary">{section.title}</h2>
-              </div>
-              <p className="text-text-secondary leading-relaxed text-base">
-                {project[section.key]}
-              </p>
-            </div>
-          </AnimatedSection>
-        ))}
       </div>
+
+      {/* Long-form narrative */}
+      {narrativeSections.map((section, idx) => (
+        <Panel key={section.key} delay={0.08 * (idx + 1)}>
+          <PanelHeading
+            Icon={section.Icon}
+            index={section.index}
+            label={section.label}
+            title={section.title}
+          />
+          <p className="text-body md:text-lead text-ink-muted max-w-3xl">{project[section.key]}</p>
+        </Panel>
+      ))}
     </div>
   )
 }

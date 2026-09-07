@@ -1,101 +1,80 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Send, User, Mail, MessageSquare, FileText } from 'lucide-react'
+import { Send, Check } from 'lucide-react'
+
+const FIELDS = [
+  { name: 'name', label: 'Your Name', type: 'text', placeholder: 'Jane Doe', half: true },
+  { name: 'email', label: 'Work Email', type: 'email', placeholder: 'jane@company.com', half: true },
+  { name: 'subject', label: 'Subject', type: 'text', placeholder: 'Project collaboration' },
+]
+
+const inputClasses =
+  'w-full px-4 py-2.5 rounded-lg bg-surface-low text-ink text-note placeholder:text-ink-faint border border-line outline-none transition-colors duration-300 focus:border-ink focus:ring-1 focus:ring-ink'
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
+
+    // No backend is wired up yet — the submit is simulated locally.
+    await new Promise((resolve) => setTimeout(resolve, 1200))
+
     setIsSubmitting(false)
     setIsSubmitted(true)
     setFormData({ name: '', email: '', subject: '', message: '' })
-    
+
     setTimeout(() => setIsSubmitted(false), 5000)
   }
 
-  const inputClasses = "w-full px-5 py-3.5 rounded-xl bg-bg-card border border-border text-text-primary placeholder-text-muted focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all duration-300 text-sm"
-
   return (
-    <motion.form
-      onSubmit={handleSubmit}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="space-y-6"
-    >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="contact-name" className="flex items-center gap-2 text-text-secondary text-sm mb-2.5 font-medium">
-            <User className="w-4 h-4" />
-            Name
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {FIELDS.filter((f) => f.half).map((field) => (
+          <div key={field.name} className="space-y-1.5">
+            <label htmlFor={`contact-${field.name}`} className="block kicker text-ink-muted">
+              {field.label}
+            </label>
+            <input
+              id={`contact-${field.name}`}
+              name={field.name}
+              type={field.type}
+              value={formData[field.name]}
+              onChange={handleChange}
+              placeholder={field.placeholder}
+              required
+              className={inputClasses}
+            />
+          </div>
+        ))}
+      </div>
+
+      {FIELDS.filter((f) => !f.half).map((field) => (
+        <div key={field.name} className="space-y-1.5">
+          <label htmlFor={`contact-${field.name}`} className="block kicker text-ink-muted">
+            {field.label}
           </label>
           <input
-            id="contact-name"
-            type="text"
-            name="name"
-            value={formData.name}
+            id={`contact-${field.name}`}
+            name={field.name}
+            type={field.type}
+            value={formData[field.name]}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder={field.placeholder}
             required
             className={inputClasses}
           />
         </div>
-        <div>
-          <label htmlFor="contact-email" className="flex items-center gap-2 text-text-secondary text-sm mb-2.5 font-medium">
-            <Mail className="w-4 h-4" />
-            Email
-          </label>
-          <input
-            id="contact-email"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="john@example.com"
-            required
-            className={inputClasses}
-          />
-        </div>
-      </div>
+      ))}
 
-      <div>
-        <label htmlFor="contact-subject" className="flex items-center gap-2 text-text-secondary text-sm mb-2.5 font-medium">
-          <FileText className="w-4 h-4" />
-          Subject
-        </label>
-        <input
-          id="contact-subject"
-          type="text"
-          name="subject"
-          value={formData.subject}
-          onChange={handleChange}
-          placeholder="Project Collaboration"
-          required
-          className={inputClasses}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="contact-message" className="flex items-center gap-2 text-text-secondary text-sm mb-2.5 font-medium">
-          <MessageSquare className="w-4 h-4" />
+      <div className="space-y-1.5">
+        <label htmlFor="contact-message" className="block kicker text-ink-muted">
           Message
         </label>
         <textarea
@@ -103,7 +82,7 @@ export default function ContactForm() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Tell me about your project or idea..."
+          placeholder="Tell me about your project scope, timeline, and aspirations…"
           required
           rows={5}
           className={`${inputClasses} resize-none`}
@@ -113,26 +92,31 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm transition-all duration-300 ${
-          isSubmitted
-            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-            : 'gradient-bg text-white hover:shadow-glow hover:scale-[1.02]'
-        } disabled:opacity-60 disabled:cursor-not-allowed`}
+        className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-note font-medium transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${
+          isSubmitted ? 'bg-moss text-on-dark' : 'bg-ink text-canvas hover:bg-ink-muted'
+        }`}
       >
         {isSubmitting ? (
           <>
-            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            Sending...
+            <span className="w-4 h-4 rounded-full border-2 border-canvas/30 border-t-canvas animate-spin" />
+            Sending…
           </>
         ) : isSubmitted ? (
-          '✓ Message Sent Successfully!'
+          <>
+            <Check className="w-4 h-4" strokeWidth={2} />
+            Message sent successfully
+          </>
         ) : (
           <>
-            <Send className="w-4 h-4" />
+            <Send className="w-4 h-4" strokeWidth={1.75} />
             Send Message
           </>
         )}
       </button>
-    </motion.form>
+
+      <p className="kicker text-ink-faint text-center">
+        Typically responds within 24 hours
+      </p>
+    </form>
   )
 }

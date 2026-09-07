@@ -1,32 +1,33 @@
 import { motion } from 'framer-motion'
 
-export default function SectionHeading({ label, title, subtitle, align = 'center' }) {
-  const alignClasses = {
-    center: 'text-center items-center',
-    left: 'text-left items-start',
-  }
-
+/**
+ * Editorial chapter header — Playfair title, optional standfirst/action on
+ * the right, baseline-aligned on desktop and stacked on mobile.
+ */
+export default function SectionHeading({
+  title,
+  description,
+  action,
+  className = '',
+  titleClassName = '',
+}) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`flex flex-col gap-5 mb-20 ${alignClasses[align]}`}
+      className={`flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-8 md:mb-12 ${className}`}
     >
-      {label && (
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-light text-xs font-semibold uppercase tracking-wider">
-          <span className="w-1.5 h-1.5 rounded-full bg-accent-light animate-pulse" />
-          {label}
-        </span>
-      )}
-      <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary leading-tight">
+      <h2 className={`font-display text-headline-sm md:text-headline text-ink md:max-w-2xl ${titleClassName}`}>
         {title}
       </h2>
-      {subtitle && (
-        <p className="text-text-secondary text-lg max-w-2xl leading-relaxed">
-          {subtitle}
-        </p>
+
+      {(description || action) && (
+        <div className="shrink-0 md:mb-1.5 md:max-w-sm md:text-right">
+          {description && <p className="text-body text-ink-muted">{description}</p>}
+          {action && <div className="mt-4 md:mt-3 flex md:justify-end">{action}</div>}
+        </div>
       )}
     </motion.div>
   )

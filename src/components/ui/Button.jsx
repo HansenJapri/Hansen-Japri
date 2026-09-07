@@ -1,16 +1,22 @@
 import { motion } from 'framer-motion'
 
+/**
+ * Editorial button set.
+ * Full pill contours, warm espresso fill, trailing glyph translates on hover.
+ */
 const variants = {
-  primary: 'gradient-bg text-white hover:shadow-glow hover:scale-105',
-  secondary: 'bg-bg-tertiary border border-border text-text-primary hover:border-accent/30 hover:bg-accent/10',
-  outline: 'bg-transparent border border-accent/30 text-accent-light hover:bg-accent/10 hover:border-accent/50',
-  ghost: 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-bg-tertiary',
+  primary: 'bg-ink text-canvas hover:bg-ink-muted shadow-float',
+  secondary: 'bg-transparent text-ink border border-ink/25 hover:bg-surface-high hover:border-ink/40',
+  tonal: 'bg-surface-high text-ink border border-line hover:bg-surface-highest',
+  accent: 'bg-moss text-on-dark hover:bg-moss-deep shadow-float',
+  onDark: 'bg-canvas text-ink hover:bg-surface-high',
+  ghost: 'bg-transparent text-ink-muted hover:text-ink',
 }
 
 const sizes = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-sm',
-  lg: 'px-8 py-4 text-base',
+  sm: 'px-4 py-2 text-note',
+  md: 'px-6 py-2.5 text-note',
+  lg: 'px-7 py-3 text-body',
 }
 
 export default function Button({
@@ -24,20 +30,32 @@ export default function Button({
   download,
   ...props
 }) {
-  const baseClasses = `inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-300 ${variants[variant]} ${sizes[size]} ${className}`
+  const baseClasses = [
+    'group inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-wide',
+    'transition-colors duration-300 ease-out',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas',
+    variants[variant],
+    sizes[size],
+    className,
+  ].join(' ')
 
   const content = (
     <>
-      {Icon && <Icon className="w-4 h-4" />}
-      {children}
-      {IconRight && <IconRight className="w-4 h-4" />}
+      {Icon && <Icon className="w-4 h-4 shrink-0" strokeWidth={1.75} />}
+      <span>{children}</span>
+      {IconRight && (
+        <IconRight
+          className="w-4 h-4 shrink-0 transition-transform duration-300 ease-out group-hover:translate-x-0.5"
+          strokeWidth={1.75}
+        />
+      )}
     </>
   )
 
   if (href) {
     return (
       <motion.a
-        whileTap={{ scale: 0.97 }}
+        whileTap={{ scale: 0.98 }}
         href={href}
         className={baseClasses}
         download={download}
@@ -51,11 +69,7 @@ export default function Button({
   }
 
   return (
-    <motion.button
-      whileTap={{ scale: 0.97 }}
-      className={baseClasses}
-      {...props}
-    >
+    <motion.button whileTap={{ scale: 0.98 }} className={baseClasses} {...props}>
       {content}
     </motion.button>
   )

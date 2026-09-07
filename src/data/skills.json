@@ -1,38 +1,74 @@
 [
   {
+    "type": "hard",
     "category": "Frontend Development",
     "icon": "monitor",
-    "color": "accent",
-    "skills": ["React JS", "Next JS", "HTML", "CSS", "JavaScript"]
+    "skills": ["React JS", "Next JS", "HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "State Management"]
   },
   {
+    "type": "hard",
     "category": "Backend Development",
     "icon": "server",
-    "color": "emerald",
-    "skills": ["Node.js", "Express.js", "Python", "FastAPI", "MySQL", "PostgreSQL", "MongoDB", "Prisma Client", "System Architecture Design", "API Testing", "Unit Testing", "C"]
+    "skills": ["Node.js", "Express.js", "Python", "FastAPI", "Kotlin", "C", "API Design", "API Testing", "Unit Testing"]
   },
   {
+    "type": "hard",
+    "category": "Databases",
+    "icon": "database",
+    "skills": ["MySQL", "PostgreSQL", "MongoDB", "Prisma Client", "Database Management", "Database Design"]
+  },
+  {
+    "type": "hard",
+    "category": "Architecture & System Design",
+    "icon": "layers",
+    "skills": ["Software Architecture", "System Design", "High-Level Design (HLD)", "Low-Level Design (LLD)", "Security Design", "Cloud Design", "Cloud Deployment", "SDLC", "CI/CD Pipelines", "TDD"]
+  },
+  {
+    "type": "hard",
     "category": "Tools & Platforms",
     "icon": "wrench",
-    "color": "blue",
-    "skills": ["Git / GitHub", "Postman", "Docker", "n8n", "Generative AI"]
+    "skills": ["Git / GitHub", "Postman", "Docker", "n8n"]
   },
   {
-    "category": "Security & AI",
+    "type": "hard",
+    "category": "Security & AI Engineering",
     "icon": "shield",
-    "color": "red",
-    "skills": ["Penetration Testing", "CEH Framework", "Prompt Engineering", "AI Image & Video Generation"]
+    "skills": ["Penetration Testing", "CEH Framework", "Security Analysis", "Prompt Engineering", "AI Native Engineer", "AI Assisted Development", "AI Ethics", "Generative AI", "AI Image & Video Generation"]
   },
   {
-    "category": "Business & Management",
+    "type": "hard",
+    "category": "Product & Business Engineering",
     "icon": "briefcase",
-    "color": "amber",
-    "skills": ["Leadership", "Project Management", "Business Analysis", "Business Case", "Problem Solving", "Strong Communication"]
+    "skills": ["Fullstack Web", "Business Case", "Business Analysis"]
   },
   {
+    "type": "soft",
+    "category": "Leadership & Management",
+    "icon": "target",
+    "skills": ["Leadership", "Agile Project Management", "Time Management", "Conflict Management", "Team Work & Collaboration"]
+  },
+  {
+    "type": "soft",
+    "category": "Communication & Interpersonal",
+    "icon": "messageCircle",
+    "skills": ["Strong Communication", "Public Speaking", "Empathy", "Emotional Intelligence"]
+  },
+  {
+    "type": "soft",
+    "category": "Thinking & Problem Solving",
+    "icon": "brain",
+    "skills": ["Problem Solver", "Critical Thinking", "Analytical Thinking", "Creative Thinking", "Attention to Detail"]
+  },
+  {
+    "type": "soft",
+    "category": "Growth & Adaptability",
+    "icon": "sparkles",
+    "skills": ["Fast Learner", "High Adaptability", "Willingness to Learn", "Resilience", "Digital Literacy"]
+  },
+  {
+    "type": "soft",
     "category": "Languages",
     "icon": "globe",
-    "color": "purple",
-    "skills": ["Indonesian (Native)", "English (Professional)", "Chinese / Mandarin (Conversational)"]
+    "skills": ["Indonesian Language (Native)", "English Language (Professional)", "Mandarin Chinese — Professional (精通)"]
   }
 ]

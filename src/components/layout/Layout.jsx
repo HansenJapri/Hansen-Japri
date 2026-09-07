@@ -11,11 +11,10 @@ export default function Layout({ children }) {
   }, [pathname])
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-canvas">
       <Navbar />
-      <main className="flex-1 pt-28 pb-24">
-        {children}
-      </main>
+      {/* pt-20 clears the fixed 5rem header */}
+      <main className="flex-1 pt-20">{children}</main>
       <Footer />
     </div>
   )

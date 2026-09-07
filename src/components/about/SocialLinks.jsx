@@ -3,39 +3,67 @@ import { Github, Linkedin, Mail, Instagram, ArrowUpRight } from 'lucide-react'
 import personalData from '../../data/personal.json'
 
 const socialConfig = [
-  { key: 'github', icon: Github, label: 'GitHub', color: 'hover:text-white hover:bg-[#333]' },
-  { key: 'linkedin', icon: Linkedin, label: 'LinkedIn', color: 'hover:text-white hover:bg-[#0077B5]' },
-  { key: 'email', icon: Mail, label: 'Email', color: 'hover:text-white hover:bg-accent' },
-  { key: 'instagram', icon: Instagram, label: 'Instagram', color: 'hover:text-white hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737]' },
+  { key: 'github', Icon: Github, label: 'GitHub', hint: 'Code & open work' },
+  { key: 'linkedin', Icon: Linkedin, label: 'LinkedIn', hint: 'Professional network' },
+  { key: 'email', Icon: Mail, label: 'Email', hint: personalData.socialLinks.email },
+  { key: 'instagram', Icon: Instagram, label: 'Instagram', hint: 'Behind the scenes' },
 ]
 
-export default function SocialLinks() {
+/* Two surfaces: the light page ground and the deep moss contact banner. */
+const themes = {
+  light: {
+    card: 'bg-canvas border-line hover:shadow-float',
+    badge: 'bg-surface-high text-ink group-hover:bg-moss-soft group-hover:text-moss-ink',
+    label: 'text-ink',
+    hint: 'text-ink-muted',
+    glyph: 'text-ink-faint group-hover:text-ink',
+  },
+  onDark: {
+    card: 'bg-on-dark/5 border-on-dark/15 hover:bg-on-dark/10',
+    badge: 'bg-on-dark/10 text-on-dark group-hover:bg-moss-soft group-hover:text-moss-ink',
+    label: 'text-on-dark',
+    hint: 'text-on-dark/60',
+    glyph: 'text-on-dark/50 group-hover:text-on-dark',
+  },
+}
+
+export default function SocialLinks({ variant = 'light' }) {
+  const theme = themes[variant] || themes.light
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-      {socialConfig.map((social, index) => {
-        const url = personalData.socialLinks[social.key]
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {socialConfig.map(({ key, Icon, label, hint }, index) => {
+        const url = personalData.socialLinks[key]
         if (!url) return null
-        const href = social.key === 'email' ? `mailto:${url}` : url
+        const isEmail = key === 'email'
 
         return (
           <motion.a
-            key={social.key}
-            initial={{ opacity: 0, y: 20 }}
+            key={key}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            href={href}
-            target={social.key !== 'email' ? '_blank' : undefined}
+            transition={{ delay: index * 0.07, duration: 0.45 }}
+            href={isEmail ? `mailto:${url}` : url}
+            target={isEmail ? undefined : '_blank'}
             rel="noopener noreferrer"
-            className={`group flex items-center gap-4 p-5 rounded-xl bg-bg-card border border-border transition-all duration-300 hover:border-transparent hover:shadow-card-hover ${social.color}`}
+            className={`group flex items-center gap-3 p-4 rounded-xl border transition-all duration-500 ${theme.card}`}
           >
-            <div className="w-10 h-10 rounded-lg bg-bg-tertiary flex items-center justify-center group-hover:bg-white/10 transition-colors">
-              <social.icon className="w-5 h-5" />
-            </div>
-            <div className="flex-1">
-              <div className="font-medium text-sm">{social.label}</div>
-            </div>
-            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span
+              className={`flex items-center justify-center w-10 h-10 shrink-0 rounded-full transition-colors duration-300 ${theme.badge}`}
+            >
+              <Icon className="w-4.5 h-4.5" strokeWidth={1.75} />
+            </span>
+
+            <span className="min-w-0 flex-1">
+              <span className={`block text-body font-medium ${theme.label}`}>{label}</span>
+              <span className={`block text-note truncate ${theme.hint}`}>{hint}</span>
+            </span>
+
+            <ArrowUpRight
+              className={`w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${theme.glyph}`}
+              strokeWidth={1.75}
+            />
           </motion.a>
         )
       })}

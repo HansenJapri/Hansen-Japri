@@ -38,5 +38,45 @@
     "date": "2025",
     "verificationUrl": "/certificate/Participants_Certificate_Hansen Japri.pdf",
     "category": "Achievement"
+  },
+  {
+    "id": "cert-6",
+    "name": "Top 6 Finalist Pitch Deck — UMN × CIMB Niaga",
+    "issuer": "Universitas Multimedia Nusantara × CIMB Niaga",
+    "date": "2025-12",
+    "verificationUrl": "/certificate/Finalist Pitch Deck Cimb Niaga.pdf",
+    "category": "Achievement"
+  },
+  {
+    "id": "cert-7",
+    "name": "Software Engineering Job Simulation",
+    "issuer": "JPMorgan Chase & Co. (Forage)",
+    "date": "2026-07-28",
+    "verificationUrl": "/certificate/JPMorgan - Software Engineering Job simulation.pdf",
+    "category": "Development"
+  },
+  {
+    "id": "cert-8",
+    "name": "Investment Banking Job Simulation",
+    "issuer": "JPMorgan Chase & Co. (Forage)",
+    "date": "2026-07-29",
+    "verificationUrl": "/certificate/JPMorgan Investment Banking Job Simulation.pdf",
+    "category": "Finance"
+  },
+  {
+    "id": "cert-9",
+    "name": "Software Architecture & Design of Modern Large Scale Systems",
+    "issuer": "Udemy — Top Developer Academy LLC",
+    "date": "2026-08",
+    "verificationUrl": "/certificate/Software Architecture & Design of Modern Large Scale Systems.jpg",
+    "category": "Architecture"
+  },
+  {
+    "id": "cert-10",
+    "name": "Critical Thinking in the Era of Artificial Intelligence",
+    "issuer": "HP LIFE (HP Foundation)",
+    "date": "2026-07",
+    "verificationUrl": "/certificate/屏幕截图 2026-07-27 221514.png",
+    "category": "Development"
   }
 ]

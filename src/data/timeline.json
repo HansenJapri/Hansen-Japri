@@ -30,14 +30,64 @@
     "highlights": ["Advanced level certification", "Full-stack JavaScript", "React & Node.js"]
   },
   {
+    "id": "tl-training-3",
+    "type": "education",
+    "title": "Software Architecture & Design of Modern Large Scale Systems",
+    "organization": "Udemy — Top Developer Academy LLC",
+    "startDate": "2026-08-09",
+    "endDate": "2026-08-09",
+    "description": "Learned how to design large-scale software system architectures capable of serving millions of concurrent users, deepening the ability to analyze technical requirements, design efficient APIs, and maintain system performance, scalability, and availability. Explored key components of distributed systems, including DNS, Load Balancers, Message Brokers, API Gateways, and CDNs, and studied global-scale data management strategies, real-time data stream processing, and Big Data architecture patterns. This learning strengthened my mindset as a Software Architect to design fault-tolerant systems ready for large-scale enterprise deployment.",
+    "highlights": ["Distributed systems: DNS, load balancers, message brokers, API gateways, CDNs", "Global-scale data management & real-time stream processing", "Big Data architecture patterns & fault-tolerant design"]
+  },
+  {
+    "id": "tl-training-4",
+    "type": "education",
+    "title": "Critical Thinking in the Era of Artificial Intelligence",
+    "organization": "HP LIFE (HP Foundation)",
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-27",
+    "description": "Maximizes analytical precision and minimizes AI-generated misinformation across business strategy, project management, and technical systems development (coding & backend). Achieved by applying structured critical thinking frameworks such as the Socratic Method, Bloom's Taxonomy, and the RED Model combined with strong domain fundamentals and practical fact-checking techniques to thoroughly verify AI outputs prior to final execution.",
+    "highlights": ["Socratic Method, Bloom's Taxonomy & the RED Model", "AI-output verification & fact-checking discipline", "Applied across business strategy, PM, and backend systems"]
+  },
+  {
+    "id": "tl-training-5",
+    "type": "education",
+    "title": "Backend Developer JavaScript",
+    "organization": "Dicoding Indonesia",
+    "startDate": "2025",
+    "endDate": "2025",
+    "description": "Completed Dicoding's Backend Developer JavaScript pathway, covering RESTful API development and cloud-integrated backend architecture.",
+    "highlights": ["Developed scalable RESTful APIs using Node.js and JavaScript following clean architecture principles.", "Designed secure system architectures integrated with Google Cloud infrastructure and services."]
+  },
+  {
     "id": "tl-work-1",
     "type": "work",
-    "title": "CEO & Project Manager — Software House Startup",
+    "title": "Founder, CEO & Full-Stack Developer — Software House",
     "organization": "Self-Founded",
     "startDate": "2026-05",
     "endDate": "Present",
-    "description": "Founded and currently leading a software house startup with a lean team of 4, providing end-to-end digital solutions including web applications, mobile apps, and custom systems for clients across various industries. Responsible for business strategy, client relations, project scoping, and overall technical direction.",
-    "highlights": ["Team of 4 including CEO", "Full-spectrum software services", "Web, mobile & custom systems on demand"]
+    "description": "Founded and solely operate a software house building dynamic company-profile and portfolio websites — web-only builds designed to present a client's business or personal work, always shipped with a custom admin panel so the client can add, edit, and delete their own site content without touching code. As the sole team member, I personally cover every function: CEO, Project Manager, Full-Stack Developer, and UI/UX Designer, owning business strategy, client relations, project scoping, and technical delivery end to end.",
+    "highlights": ["Solo-run — CEO, PM, Developer & UI/UX in one", "Dynamic company-profile & portfolio websites with a custom CMS admin panel", "Web only — no mobile or desktop app development"]
+  },
+  {
+    "id": "tl-work-5",
+    "type": "work",
+    "title": "Investment Banking Job Simulation",
+    "organization": "JPMorgan Chase & Co. (Forage Virtual Experience)",
+    "startDate": "2026-07-29",
+    "endDate": "2026-07-29",
+    "description": "Completed JPMorgan Chase's Investment Banking Virtual Experience Program via Forage, simulating the target-identification, valuation, and client-advisory workflow of a real M&A engagement.",
+    "highlights": ["Identified an ideal M&A target for a client based on an assessment of their strategic and financial criteria.", "Constructed a DCF model to calculate the valuation of the M&A target and adjusted the model to account for a competitor bid and supply chain interruption.", "Created a 2-pager for the client containing a company profile and summary of the auction process."]
+  },
+  {
+    "id": "tl-work-6",
+    "type": "work",
+    "title": "Software Engineering Job Simulation",
+    "organization": "JPMorgan Chase & Co. (Forage Virtual Experience)",
+    "startDate": "2026-07-28",
+    "endDate": "2026-07-28",
+    "description": "Completed JPMorgan Chase's Software Engineering Virtual Experience Program via Forage, building a Kafka-integrated Spring Boot microservice for real-time transaction processing.",
+    "highlights": ["Integrated Kafka into a Spring Boot microservice to consume and deserialize high-volume transaction messages using a configurable topic and embedded Kafka test framework.", "Implemented transaction validation and persistence logic with Spring Data JPA and an H2 SQL database, including entity modeling and balance updates across relational User records.", "Connected the service to an external REST Incentive API using RestTemplate, processing incentive responses and incorporating them into transactional workflows.", "Developed a REST endpoint for querying user balances, returning JSON responses through a Spring controller while maintaining clean architectural boundaries.", "Verified system behavior using Maven test suites and debugger-driven inspection, ensuring reliability across message ingestion, database operations, and external API interactions."]
   },
   {
     "id": "tl-org-1",
@@ -47,7 +97,7 @@
     "startDate": "2025-09",
     "endDate": "2026-09",
     "description": "Serving as Vice Chairman of the UMN Programming Club, collaborating with the executive board (BPH) to drive the club's vision and organize flagship annual events — including an internal competitive programming contest open to all UMN students, and the Awarding Night as the celebratory grand finale.",
-    "highlights": ["Internal competitive programming contest", "Awarding Night — annual grand finale", "Executive board (BPH) leadership"]
+    "highlights": ["Internal competitive programming contest", "Awarding Night — annual grand finale", "Executive board (BPH) leadership", "Directed social media, web, and contest initiatives via cross-divisional coordination.", "Directed events planning and team leadership initiatives, achieving operational targets and ensuring high standards were met across 2 events."]
   },
   {
     "id": "tl-achievement-1",
@@ -82,12 +132,12 @@
   {
     "id": "tl-work-3",
     "type": "work",
-    "title": "Founder — Custom & Designed Clothing Brand",
+    "title": "Co-Founder — Custom & Designed Clothing Brand",
     "organization": "Self-Founded (Partnership)",
     "startDate": "2023-01",
     "endDate": "2024-06",
-    "description": "Founded a fashion micro-brand together with a business partner — originating the concept and driving its execution — offering self-designed and custom-printed apparel. Handled brand identity, product design, and sales operations through Instagram and WhatsApp, building a loyal customer base through personalized offerings.",
-    "highlights": ["Founder (2 members total)", "Original design & custom orders", "Sales via Instagram & WhatsApp"]
+    "description": "Co-founded a fashion micro-brand together with a business partner — originating the concept and driving its execution jointly — offering self-designed and custom-printed apparel. Handled brand identity, product design, and sales operations through Instagram and WhatsApp, building a loyal customer base through personalized offerings.",
+    "highlights": ["Co-founded with a business partner (2 members total)", "Original design & custom orders", "Sales via Instagram & WhatsApp"]
   },
   {
     "id": "tl-work-4",
