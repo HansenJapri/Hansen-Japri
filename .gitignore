@@ -29,3 +29,6 @@ Thumbs.db
 
 # Claude Code local tooling
 .claude/
+
+.vercel
+.env*.local
