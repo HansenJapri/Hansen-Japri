@@ -1,16 +1,87 @@
 {
   "name": "Hansen Japri",
-  "tagline": "Crafting Digital Experiences That Matter",
-  "subtitle": "Software Engineer | Fullstack Developer | AI Native Engineer | Project Manager | Product Manager | Founder at Loka Ark Tech | 精通中文",
-  "role": "Fullstack Developer & AI Agent Engineer",
+  "role": "AI-Native Software & Product-Minded Engineer",
+  "headline": "I turn abstract ideas into production-ready software, fast, and built to make commercial sense.",
   "location": "Tangerang, Indonesia",
-  "availability": "Open for collaboration & freelance",
-  "bio": [
-    "I am an AI-Native Builder and Backend Developer operating at the intersection of robust systems engineering and commercial viability. My engineering philosophy is straightforward: technology only creates value when it solves genuine operational bottlenecks or unlocks untapped market demand. Cultivating an entrepreneurial mindset since junior high school — where I first learned to identify day-to-day inefficiencies and turn them into viable initiatives — I bridge the gap between abstract business requirements and production-grade architectures. Driving all of this is an insatiable curiosity — I am naturally curious about almost everything, which fuels a fast learning curve and a high adaptability that lets me pick up new tools, domains, and problem spaces quickly and put them to work almost immediately.",
-    "Commercial Acumen & Product Discovery: Having initiated and run ventures from an early age, I approach engineering through a product-market lens. Rather than writing code for its own sake, I evaluate unit economics, user friction, and ROI. I specialize in dissecting messy business problems, validating market opportunities, and translating them into lean, functional product roadmaps.",
-    "AI-Native Velocity with Engineering Discipline: I leverage modern agentic workflows and developer tools (ChatGPT, Claude, Claude Code) to drastically compress the discovery-to-deployment cycle. This speed is balanced by classical software engineering rigor: modular System Design, resilient API and database architectures, strict security posture, Docker containerization, Test-Driven Development (TDD), and automated CI/CD pipelines.",
-    "Operational Resilience & Failure Hardening: In production environments, technical errors translate directly into business risk. My incident response framework prioritizes immediate containment to mitigate financial and operational exposure, followed by structured root-cause analysis using the 5 Whys methodology. By treating incidents as systemic bugs rather than individual failures, I continuously reinforce codebases, validation guardrails, and operational SOPs to guarantee long-term stability.",
-    "Today, I run a solo-operated software house building dynamic company-profile and portfolio websites for clients — each shipped with a custom admin panel so the client can add, edit, and remove their own site content without touching code. I remain open to collaboration on high-impact software, AI agent, and security-focused engagements."
+  "availability": "Open to AI product engineering and software engineering work",
+  "focus": [
+    {
+      "title": "AI Product Engineering",
+      "body": "From AI capability to a product people actually use. I scope the problem, design the workflow, and ship the full stack."
+    },
+    {
+      "title": "Software Engineering",
+      "body": "System design, API and database design, security, Docker, TDD, CI/CD. Speed that holds up in production."
+    }
+  ],
+  "about": "I'm an AI-Native Software & Product-Minded Engineer who loves turning abstract ideas into real, production-ready software fast. I'm naturally curious about emerging tech and genuinely enjoy tackling complex problems. Whenever I solve a problem or make a technical or business decision, I rely on solid SWOT analysis and cost-benefit trade-offs rather than gut feelings, making sure every move maximizes upside and profitability while keeping potential losses to a bare minimum. Having started my entrepreneurial journey back in junior high, I bring strong business sense to the table. I pair AI acceleration (ChatGPT, Claude, Claude Code) with solid engineering discipline covering System Design, API/DB Design, Security, Cloud, Docker, TDD, and CI/CD to build products that actually make commercial sense. And when things break, my instinct is to contain the issue fast to reduce risk, then run a 5 Whys root-cause analysis to strengthen our workflows and guardrails so it doesn't happen again.",
+  "principles": [
+    {
+      "title": "Start with the business problem",
+      "body": "Before any code, I analyze the problem the business actually has: who it hurts, what it costs, and what success looks like. Software that solves the wrong problem is the most expensive kind."
+    },
+    {
+      "title": "Map the requirements",
+      "body": "Then I lay out the functional requirements (what the system must do) and the non-functional ones (performance, security, scalability, reliability), so scope and quality bars are agreed before building."
+    },
+    {
+      "title": "Design the system",
+      "body": "Only then comes System Design: architecture, API and database design, and trade-offs, all traced back to those requirements."
+    },
+    {
+      "title": "Build fast, build real",
+      "body": "I love turning abstract ideas into real, production-ready software fast. AI acceleration (ChatGPT, Claude, Claude Code) paired with System Design, API/DB Design, Security, Cloud, Docker, TDD, and CI/CD."
+    },
+    {
+      "title": "Decide with evidence",
+      "body": "Every technical or business decision runs through SWOT analysis and cost-benefit trade-offs, not gut feeling. Maximize upside, keep potential losses to a bare minimum."
+    },
+    {
+      "title": "Contain, then find the root",
+      "body": "When things break, I contain the issue fast to reduce risk, then run a 5 Whys root-cause analysis to strengthen workflows and guardrails so it does not happen again."
+    }
+  ],
+  "featuredSkills": [
+    {
+      "name": "Software Architecture",
+      "note": "Modular structure that survives change."
+    },
+    {
+      "name": "System Design",
+      "note": "Scale, failure modes, and trade-offs planned up front."
+    },
+    {
+      "name": "Agentic Workflow",
+      "note": "AI agents and automation wired into real work."
+    },
+    {
+      "name": "App & Security Testing",
+      "note": "Break it before anyone else does: unit, automation, and security analysis."
+    },
+    {
+      "name": "API Design",
+      "note": "Clear contracts between services and clients."
+    },
+    {
+      "name": "Database Design",
+      "note": "Schemas that keep data honest as products grow."
+    },
+    {
+      "name": "HSK 6 Mandarin",
+      "note": "Professional Mandarin, the highest HSK level."
+    },
+    {
+      "name": "Business Development",
+      "note": "Entrepreneur since junior high."
+    },
+    {
+      "name": "Critical Thinking",
+      "note": "Verify first, decide second."
+    },
+    {
+      "name": "Creative Thinking",
+      "note": "New angles on old problems."
+    }
   ],
   "avatar": "/images/HansenJapri.jpg",
   "resumeUrl": "/certificate/Hansen Japri CV Resume.pdf",
@@ -19,11 +90,5 @@
     "linkedin": "https://www.linkedin.com/in/hansen-japri/",
     "email": "hansenjwork@gmail.com",
     "instagram": "https://www.instagram.com/hnsen_j"
-  },
-  "stats": {
-    "projectCount": 3,
-    "yearsExperience": 4,
-    "certifications": 10,
-    "techMastered": 49
   }
 }

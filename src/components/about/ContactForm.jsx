@@ -1,122 +1,80 @@
 import { useState } from 'react'
-import { Send, Check } from 'lucide-react'
+import { Send } from 'lucide-react'
+import Button from '../ui/Button'
+import personalData from '../../data/personal.json'
 
 const FIELDS = [
-  { name: 'name', label: 'Your Name', type: 'text', placeholder: 'Jane Doe', half: true },
-  { name: 'email', label: 'Work Email', type: 'email', placeholder: 'jane@company.com', half: true },
-  { name: 'subject', label: 'Subject', type: 'text', placeholder: 'Project collaboration' },
+  { name: 'name', label: 'Name', type: 'text', autoComplete: 'name' },
+  { name: 'email', label: 'Email', type: 'email', autoComplete: 'email' },
 ]
 
-const inputClasses =
-  'w-full px-4 py-2.5 rounded-lg bg-surface-low text-ink text-note placeholder:text-ink-faint border border-line outline-none transition-colors duration-300 focus:border-ink focus:ring-1 focus:ring-ink'
+const inputClass =
+  'w-full rounded-xl border border-line-strong bg-raised px-4 py-3 text-fg placeholder:text-fg-faint outline-none transition-colors duration-200 focus:border-accent'
 
+/*
+ * No backend: submitting opens the visitor's email app with the message
+ * already written, addressed to Hansen.
+ */
 export default function ContactForm() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [data, setData] = useState({ name: '', email: '', message: '' })
+  const [opened, setOpened] = useState(false)
 
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
+  const onChange = (e) => setData((d) => ({ ...d, [e.target.name]: e.target.value }))
 
-  const handleSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
-
-    // No backend is wired up yet — the submit is simulated locally.
-    await new Promise((resolve) => setTimeout(resolve, 1200))
-
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: '', email: '', subject: '', message: '' })
-
-    setTimeout(() => setIsSubmitted(false), 5000)
+    const subject = `Hello from ${data.name}`
+    const body = `${data.message}\n\n${data.name}\n${data.email}`
+    window.location.href = `mailto:${personalData.socialLinks.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setOpened(true)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {FIELDS.filter((f) => f.half).map((field) => (
-          <div key={field.name} className="space-y-1.5">
-            <label htmlFor={`contact-${field.name}`} className="block kicker text-ink-muted">
-              {field.label}
+    <form onSubmit={onSubmit} className="space-y-5">
+      <div className="grid gap-5 sm:grid-cols-2">
+        {FIELDS.map((f) => (
+          <div key={f.name} className="flex flex-col gap-2">
+            <label htmlFor={`contact-${f.name}`} className="text-sm text-fg-muted">
+              {f.label}
             </label>
             <input
-              id={`contact-${field.name}`}
-              name={field.name}
-              type={field.type}
-              value={formData[field.name]}
-              onChange={handleChange}
-              placeholder={field.placeholder}
+              id={`contact-${f.name}`}
+              name={f.name}
+              type={f.type}
+              autoComplete={f.autoComplete}
+              value={data[f.name]}
+              onChange={onChange}
               required
-              className={inputClasses}
+              className={inputClass}
             />
           </div>
         ))}
       </div>
 
-      {FIELDS.filter((f) => !f.half).map((field) => (
-        <div key={field.name} className="space-y-1.5">
-          <label htmlFor={`contact-${field.name}`} className="block kicker text-ink-muted">
-            {field.label}
-          </label>
-          <input
-            id={`contact-${field.name}`}
-            name={field.name}
-            type={field.type}
-            value={formData[field.name]}
-            onChange={handleChange}
-            placeholder={field.placeholder}
-            required
-            className={inputClasses}
-          />
-        </div>
-      ))}
-
-      <div className="space-y-1.5">
-        <label htmlFor="contact-message" className="block kicker text-ink-muted">
+      <div className="flex flex-col gap-2">
+        <label htmlFor="contact-message" className="text-sm text-fg-muted">
           Message
         </label>
         <textarea
           id="contact-message"
           name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Tell me about your project scope, timeline, and aspirations…"
+          rows={6}
+          value={data.message}
+          onChange={onChange}
+          placeholder="What are you building, and where do you need help?"
           required
-          rows={5}
-          className={`${inputClasses} resize-none`}
+          className={`${inputClass} resize-y min-h-36`}
         />
       </div>
 
-      <button
-        type="submit"
-        disabled={isSubmitting}
-        className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-note font-medium transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed ${
-          isSubmitted ? 'bg-moss text-on-dark' : 'bg-ink text-canvas hover:bg-ink-muted'
-        }`}
-      >
-        {isSubmitting ? (
-          <>
-            <span className="w-4 h-4 rounded-full border-2 border-canvas/30 border-t-canvas animate-spin" />
-            Sending…
-          </>
-        ) : isSubmitted ? (
-          <>
-            <Check className="w-4 h-4" strokeWidth={2} />
-            Message sent successfully
-          </>
-        ) : (
-          <>
-            <Send className="w-4 h-4" strokeWidth={1.75} />
-            Send Message
-          </>
-        )}
-      </button>
-
-      <p className="kicker text-ink-faint text-center">
-        Typically responds within 24 hours
-      </p>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+        <Button type="submit" size="lg" icon={Send}>
+          Send message
+        </Button>
+        <p className="text-sm text-fg-faint" aria-live="polite">
+          {opened ? 'Your email app should open with the message ready to send.' : 'Opens in your email app.'}
+        </p>
+      </div>
     </form>
   )
 }

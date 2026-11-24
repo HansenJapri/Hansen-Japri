@@ -1,156 +1,127 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ArrowRight } from 'lucide-react'
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import Button from '../ui/Button'
+import { EASE_OUT } from '../ui/AnimatedSection'
 import personalData from '../../data/personal.json'
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/projects', label: 'Projects' },
+  { to: '/projects', label: 'Work' },
   { to: '/journey', label: 'Journey' },
   { to: '/about', label: 'About' },
 ]
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', (v) => setScrolled(v > 12))
+
+  useEffect(() => setOpen(false), [location.pathname])
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 16)
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    setIsOpen(false)
-  }, [location])
+    if (!open) return
+    const onKey = (e) => e.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
 
   return (
-    <motion.header
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 inset-x-0 z-50 frosted transition-shadow duration-500 ${
-        scrolled ? 'shadow-float border-b border-line' : 'border-b border-transparent'
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
+        scrolled || open
+          ? 'bg-ground/80 backdrop-blur-md border-b border-line'
+          : 'bg-transparent border-b border-transparent'
       }`}
     >
-      <div className="section-container">
-        <div className="h-20 flex items-center justify-between gap-4">
-          {/* Brand */}
-          <Link to="/" className="group flex items-center gap-3 shrink-0">
-            <img
-              src={personalData.avatar}
-              alt=""
-              className="w-9 h-9 rounded-full object-cover object-top ring-1 ring-line"
-            />
-            <span className="font-display text-lg md:text-title text-ink leading-none group-hover:text-moss transition-colors duration-300">
-              {personalData.name}
-            </span>
-          </Link>
+      <div className="container-page h-16 flex items-center justify-between gap-6">
+        <Link to="/" className="text-[0.9375rem] font-semibold tracking-tight text-fg">
+          {personalData.name}
+        </Link>
 
-          {/* Desktop nav — segmented pill group */}
-          <nav className="hidden lg:flex items-center gap-1 p-1 rounded-full bg-surface-low border border-line">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === '/'}
-                className={({ isActive }) =>
-                  `relative px-4 py-1.5 rounded-full text-note transition-colors duration-300 ${
-                    isActive ? 'text-ink font-semibold' : 'text-ink-muted hover:text-ink'
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    {isActive && (
-                      <motion.span
-                        layoutId="navActivePill"
-                        className="absolute inset-0 rounded-full bg-surface-highest"
-                        transition={{ type: 'spring', bounce: 0.18, duration: 0.6 }}
-                      />
-                    )}
-                    <span className="relative z-10">{link.label}</span>
-                  </>
-                )}
-              </NavLink>
-            ))}
-          </nav>
-
-          {/* CTA + mobile toggle */}
-          <div className="flex items-center gap-2 shrink-0">
-            <Link
-              to="/about"
-              className="hidden sm:inline-flex group items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-canvas text-note font-medium hover:bg-ink-muted transition-colors duration-300"
+        <nav className="hidden md:flex items-center gap-3" aria-label="Primary">
+          <div className="flex items-center gap-0.5 rounded-full border border-line bg-raised/70 p-1 backdrop-blur-md shadow-[0_12px_30px_-16px_rgb(0_0_0/0.9)]">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === '/'}
+              className={({ isActive }) =>
+                `relative rounded-full px-4 py-1.5 text-[0.9375rem] transition-colors duration-200 ${
+                  isActive ? 'text-fg' : 'text-fg-muted hover:text-fg'
+                }`
+              }
             >
-              Get in Touch
-              <ArrowRight
-                className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5"
-                strokeWidth={1.75}
-              />
-            </Link>
-
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-full text-ink-muted hover:text-ink hover:bg-surface-high transition-colors"
-              aria-label={isOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isOpen}
-            >
-              {isOpen ? <X className="w-5 h-5" strokeWidth={1.75} /> : <Menu className="w-5 h-5" strokeWidth={1.75} />}
-            </button>
+              {({ isActive }) => (
+                <>
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-raised-3"
+                      transition={{ type: 'spring', duration: 0.45, bounce: 0.15 }}
+                    />
+                  )}
+                  <span className="relative">{link.label}</span>
+                </>
+              )}
+            </NavLink>
+          ))}
           </div>
-        </div>
+          <Button to="/about#contact" className="!h-10 !px-4 !text-sm">
+            Get in touch
+          </Button>
+        </nav>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="press md:hidden -mr-2 p-2 rounded-full text-fg"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+        >
+          {open ? <X className="size-5" strokeWidth={1.5} /> : <Menu className="size-5" strokeWidth={1.5} />}
+        </button>
       </div>
 
-      {/* Mobile drawer */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden overflow-hidden frosted border-t border-line"
+        {open && (
+          <motion.nav
+            id="mobile-menu"
+            aria-label="Mobile"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8, transition: { duration: 0.15 } }}
+            transition={{ duration: 0.25, ease: EASE_OUT }}
+            className="md:hidden border-t border-line"
           >
-            <div className="section-container py-6 flex flex-col gap-1">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.to}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06 }}
-                >
+            <ul className="container-page py-4 flex flex-col">
+              {navLinks.map((link) => (
+                <li key={link.to}>
                   <NavLink
                     to={link.to}
                     end={link.to === '/'}
                     className={({ isActive }) =>
-                      `block px-4 py-3 rounded-xl text-body transition-colors ${
-                        isActive
-                          ? 'bg-surface-high text-ink font-semibold'
-                          : 'text-ink-muted hover:text-ink hover:bg-surface-low'
-                      }`
+                      `block py-3 text-2xl tracking-tight ${isActive ? 'text-fg' : 'text-fg-muted'}`
                     }
                   >
                     {link.label}
                   </NavLink>
-                </motion.div>
+                </li>
               ))}
-
-              <div className="mt-3 pt-4 border-t border-line">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-ink text-canvas text-note font-medium w-full"
-                >
-                  Get in Touch
-                  <ArrowRight className="w-3.5 h-3.5" strokeWidth={1.75} />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
+              <li className="pt-4">
+                <Button to="/about#contact" className="w-full">
+                  Get in touch
+                </Button>
+              </li>
+            </ul>
+          </motion.nav>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   )
 }

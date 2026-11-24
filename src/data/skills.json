@@ -1,74 +1,55 @@
-[
-  {
-    "type": "hard",
-    "category": "Frontend Development",
-    "icon": "monitor",
-    "skills": ["React JS", "Next JS", "HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "State Management"]
-  },
-  {
-    "type": "hard",
-    "category": "Backend Development",
-    "icon": "server",
-    "skills": ["Node.js", "Express.js", "Python", "FastAPI", "Kotlin", "C", "API Design", "API Testing", "Unit Testing"]
-  },
-  {
-    "type": "hard",
-    "category": "Databases",
-    "icon": "database",
-    "skills": ["MySQL", "PostgreSQL", "MongoDB", "Prisma Client", "Database Management", "Database Design"]
-  },
-  {
-    "type": "hard",
-    "category": "Architecture & System Design",
-    "icon": "layers",
-    "skills": ["Software Architecture", "System Design", "High-Level Design (HLD)", "Low-Level Design (LLD)", "Security Design", "Cloud Design", "Cloud Deployment", "SDLC", "CI/CD Pipelines", "TDD"]
-  },
-  {
-    "type": "hard",
-    "category": "Tools & Platforms",
-    "icon": "wrench",
-    "skills": ["Git / GitHub", "Postman", "Docker", "n8n"]
-  },
-  {
-    "type": "hard",
-    "category": "Security & AI Engineering",
-    "icon": "shield",
-    "skills": ["Penetration Testing", "CEH Framework", "Security Analysis", "Prompt Engineering", "AI Native Engineer", "AI Assisted Development", "AI Ethics", "Generative AI", "AI Image & Video Generation"]
-  },
-  {
-    "type": "hard",
-    "category": "Product & Business Engineering",
-    "icon": "briefcase",
-    "skills": ["Fullstack Web", "Business Case", "Business Analysis"]
-  },
-  {
-    "type": "soft",
-    "category": "Leadership & Management",
-    "icon": "target",
-    "skills": ["Leadership", "Agile Project Management", "Time Management", "Conflict Management", "Team Work & Collaboration"]
-  },
-  {
-    "type": "soft",
-    "category": "Communication & Interpersonal",
-    "icon": "messageCircle",
-    "skills": ["Strong Communication", "Public Speaking", "Empathy", "Emotional Intelligence"]
-  },
-  {
-    "type": "soft",
-    "category": "Thinking & Problem Solving",
-    "icon": "brain",
-    "skills": ["Problem Solver", "Critical Thinking", "Analytical Thinking", "Creative Thinking", "Attention to Detail"]
-  },
-  {
-    "type": "soft",
-    "category": "Growth & Adaptability",
-    "icon": "sparkles",
-    "skills": ["Fast Learner", "High Adaptability", "Willingness to Learn", "Resilience", "Digital Literacy"]
-  },
-  {
-    "type": "soft",
-    "category": "Languages",
-    "icon": "globe",
-    "skills": ["Indonesian Language (Native)", "English Language (Professional)", "Mandarin Chinese — Professional (精通)"]
-  }
-]
+{
+  "hard": [
+    {
+      "category": "AI & Agentic",
+      "skills": ["AI Native Engineer", "AI-Assisted Development", "Prompt Engineer", "Claude Code", "Codex", "Claude", "ChatGPT", "MCP Server", "n8n", "Generative AI", "AI Image & Video Generation", "AI Ethics"]
+    },
+    {
+      "category": "Languages",
+      "skills": ["TypeScript", "JavaScript", "Kotlin", "Python", "C"]
+    },
+    {
+      "category": "Frontend",
+      "skills": ["React", "Next JS", "HTML", "CSS", "Tailwind CSS", "State Management"]
+    },
+    {
+      "category": "Backend & API",
+      "skills": ["Node JS", "Express JS", "FastAPI", "RESTful API", "API Design & API Testing", "Prisma Client", "Fullstack Web"]
+    },
+    {
+      "category": "Data",
+      "skills": ["MySQL", "PostgreSQL", "MongoDB", "Database Design", "Database Management"]
+    },
+    {
+      "category": "Architecture & Design",
+      "skills": ["Software Architecture", "System Design", "High-Level Design (HLD)", "Low-Level Design (LLD)", "Cloud Design", "Security Design", "Business Case", "Business Analysis"]
+    },
+    {
+      "category": "Engineering Practice",
+      "skills": ["SDLC", "CI/CD Pipelines", "Docker", "Git", "Postman", "Unit Testing", "Automation Testing", "Cloud Deployment", "Security Analysis"]
+    }
+  ],
+  "soft": [
+    "Professional Mandarin (HSK 6)",
+    "Problem Solver",
+    "Leadership",
+    "Strong Communication",
+    "Agile Project Management",
+    "Critical Thinking",
+    "Emotional Intelligence",
+    "English Language",
+    "Public Speaking",
+    "Empathy",
+    "Time Management",
+    "Conflict Management",
+    "Analytical Thinking",
+    "Resilience",
+    "Digital Literacy",
+    "Attention to Detail",
+    "Fast Learner",
+    "High Adaptability",
+    "Willingness to Learn",
+    "Creative Thinking",
+    "Team Work & Collaboration"
+  ]
+}

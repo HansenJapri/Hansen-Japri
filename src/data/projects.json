@@ -2,18 +2,26 @@
   {
     "id": "smart-book-ai",
     "title": "SmartBook AI",
-    "shortSummary": "An AI-powered UMKM business dashboard that empowers small business owners to automate and streamline daily operations through bidirectional AI communication — supporting both voice and text for data input and natural-language business queries across the entire dashboard.",
+    "shortSummary": "An AI-powered UMKM business dashboard that empowers small business owners to automate and streamline daily operations through bidirectional AI communication, supporting both voice and text for data input and natural-language business queries across the entire dashboard.",
     "category": "Web Dev",
     "context": "Personal Initiative",
     "collaborationType": "Individual",
     "role": "Full-Stack Developer",
     "team": [],
-    "impact": "SmartBook AI directly addresses one of the most persistent pain points for Indonesian UMKM owners: the friction of manual data entry and the opacity of their own business data. By enabling business owners to input transactions, inventory updates, and operational data through natural voice commands or conversational text, the platform eliminates the need for technical literacy in spreadsheets or complex dashboards. The bidirectional AI layer transforms passive data storage into an active business intelligence tool — owners can ask questions like 'What was my best-selling product last month?' or 'How much profit did I make this week?' and receive instant, accurate answers based on their live data. This democratization of business analytics brings enterprise-grade insight to micro and small businesses that previously had no access to such tools. The combination of voice-first interaction and AI-driven automation positions SmartBook AI as a meaningful productivity multiplier for the millions of UMKM operators across Indonesia.",
-    "learning": "Building SmartBook AI as a solo project required architecting a full AI interaction pipeline from scratch — integrating speech-to-text for voice input, a language model for natural-language understanding, and a structured data layer that the AI could accurately query in real time. One of the most technically demanding aspects was designing the AI's ability to perform bidirectional communication: not only answering questions but also understanding voice and text commands well enough to correctly map them to database operations like creating transactions or updating inventory records. This demanded careful prompt engineering, robust intent parsing, and graceful fallback handling for ambiguous user inputs. Managing real-time state across the dashboard — ensuring that AI-triggered data mutations immediately reflected in the UI — deepened proficiency in reactive state management patterns. Sole ownership of the product from concept to deployment also sharpened skills in UX decision-making, particularly around designing AI interaction flows that feel intuitive and trustworthy to non-technical business owners.",
-    "techStack": ["React", "AI", "Voice Recognition", "Supabase", "Tailwind CSS"],
+    "impact": "SmartBook AI directly addresses one of the most persistent pain points for Indonesian UMKM owners: the friction of manual data entry and the opacity of their own business data. By enabling business owners to input transactions, inventory updates, and operational data through natural voice commands or conversational text, the platform eliminates the need for technical literacy in spreadsheets or complex dashboards. The bidirectional AI layer transforms passive data storage into an active business intelligence tool, owners can ask questions like 'What was my best-selling product last month?' or 'How much profit did I make this week?' and receive instant, accurate answers based on their live data. This democratization of business analytics brings enterprise-grade insight to micro and small businesses that previously had no access to such tools. The combination of voice-first interaction and AI-driven automation positions SmartBook AI as a meaningful productivity multiplier for the millions of UMKM operators across Indonesia.",
+    "learning": "Building SmartBook AI as a solo project required architecting a full AI interaction pipeline from scratch, integrating speech-to-text for voice input, a language model for natural-language understanding, and a structured data layer that the AI could accurately query in real time. One of the most technically demanding aspects was designing the AI's ability to perform bidirectional communication: not only answering questions but also understanding voice and text commands well enough to correctly map them to database operations like creating transactions or updating inventory records. This demanded careful prompt engineering, robust intent parsing, and graceful fallback handling for ambiguous user inputs. Managing real-time state across the dashboard, ensuring that AI-triggered data mutations immediately reflected in the UI, deepened proficiency in reactive state management patterns. Sole ownership of the product from concept to deployment also sharpened skills in UX decision-making, particularly around designing AI interaction flows that feel intuitive and trustworthy to non-technical business owners.",
+    "techStack": [
+      "React",
+      "AI",
+      "Voice Recognition",
+      "Supabase",
+      "Tailwind CSS"
+    ],
     "thumbnail": "/images/smartbook.png",
     "media": {
-      "images": ["/images/smartbook.png"],
+      "images": [
+        "/images/smartbook.png"
+      ],
       "demoUrl": "https://smart-book-ai.vercel.app/",
       "repoUrl": ""
     },
@@ -29,14 +37,24 @@
     "context": "Hackathon",
     "collaborationType": "Group Project",
     "role": "Full-Stack Developer",
-    "team": ["Hansen Japri", "Rafael Romelo Gibran", "Naufal Rabani", "Victor Chandra"],
-    "impact": "LeftOver demonstrated that technology can serve as a meaningful bridge between sustainability and everyday consumer behavior. By reaching the Finalist stage at Garuda Hacks 6.0 — one of Indonesia's most competitive hackathons — the project validated both its social relevance and technical execution. The surplus food marketplace concept directly addresses food waste at the source, potentially diverting hundreds of kilograms of consumable food from landfills per participating business. The AI-powered recipe finder empowers households to make creative, waste-free use of near-expiration ingredients, reducing individual food waste without requiring lifestyle changes. Judges and mentors responded strongly to the real-world applicability of the solution, noting its dual-sided impact on both businesses facing surplus losses and consumers seeking affordable, quality food.",
-    "learning": "Building LeftOver under hackathon time constraints was an intensive crash course in cross-functional collaboration and rapid product development. The team quickly learned to scope features ruthlessly — prioritizing a polished core experience over a bloated feature set. Integrating AI into a real-time, user-facing application surfaced important lessons around prompt engineering, response handling, and graceful degradation when API calls are slow or unavailable. Working with Firebase for authentication and real-time data reinforced the value of schema planning upfront; early decisions on data structure directly impacted how smoothly the marketplace and recipe features scaled. Tailwind CSS enabled the team to iterate on UI rapidly while maintaining visual consistency. Most importantly, this project deepened the team's belief that well-designed software can genuinely drive behavioral change — and that hackathons are one of the best environments to test that hypothesis under pressure.",
-    "techStack": ["React", "AI", "Firebase", "Tailwind CSS"],
+    "team": [
+      "Hansen Japri",
+      "Rafael Romelo Gibran",
+      "Naufal Rabani",
+      "Victor Chandra"
+    ],
+    "impact": "LeftOver demonstrated that technology can serve as a meaningful bridge between sustainability and everyday consumer behavior. By reaching the Finalist stage at Garuda Hacks 6.0, one of Indonesia's most competitive hackathons, the project validated both its social relevance and technical execution. The surplus food marketplace concept directly addresses food waste at the source, potentially diverting hundreds of kilograms of consumable food from landfills per participating business. The AI-powered recipe finder empowers households to make creative, waste-free use of near-expiration ingredients, reducing individual food waste without requiring lifestyle changes. Judges and mentors responded strongly to the real-world applicability of the solution, noting its dual-sided impact on both businesses facing surplus losses and consumers seeking affordable, quality food.",
+    "learning": "Building LeftOver under hackathon time constraints was an intensive crash course in cross-functional collaboration and rapid product development. The team quickly learned to scope features ruthlessly, prioritizing a polished core experience over a bloated feature set. Integrating AI into a real-time, user-facing application surfaced important lessons around prompt engineering, response handling, and graceful degradation when API calls are slow or unavailable. Working with Firebase for authentication and real-time data reinforced the value of schema planning upfront; early decisions on data structure directly impacted how smoothly the marketplace and recipe features scaled. Tailwind CSS enabled the team to iterate on UI rapidly while maintaining visual consistency. Most importantly, this project deepened the team's belief that well-designed software can genuinely drive behavioral change, and that hackathons are one of the best environments to test that hypothesis under pressure.",
+    "techStack": [
+      "React",
+      "AI",
+      "Firebase",
+      "Tailwind CSS"
+    ],
     "thumbnail": "/images/LeftOver-1.png",
     "media": {
       "images": [],
-      "demoUrl": "https://letfover.vercel.app/",
+      "demoUrl": "https://left-over.vercel.app/",
       "repoUrl": ""
     },
     "featured": true,
@@ -52,9 +70,14 @@
     "collaborationType": "Individual",
     "role": "Full-Stack Developer",
     "team": [],
-    "impact": "Dashboard Keuangan Toko addresses a critical gap in Indonesia's informal economy, where millions of small grocery (sembako) store owners still rely entirely on manual bookkeeping. By digitizing this workflow, the platform gives store owners real-time visibility into stock levels, daily transactions, and revenue trends — transforming raw retail data into actionable business insights at a glance. Deploying on Vercel with Supabase as the backend delivers enterprise-grade reliability with near-zero infrastructure overhead, making it genuinely accessible for small businesses without dedicated IT staff. The end-to-end ownership of this project — from database schema design to frontend delivery — demonstrates the ability to independently ship production-ready software that solves tangible, real-world problems faced by traditional retailers across Indonesia.",
-    "learning": "This project was a comprehensive exercise in full-stack independence and product ownership. Designing the database architecture in Supabase from scratch demanded a deep understanding of relational data modeling — particularly around inventory transactions, product categories, and time-series sales records. Implementing user authentication end-to-end, from registration and login flows to session persistence, solidified best practices in secure access management. On the frontend, managing complex UI states — dynamic inventory tables, form validations, and real-time data fetching — deepened proficiency with React's state and effect patterns. Deploying to Vercel and connecting it to a live Supabase instance provided hands-on experience with environment variable management and production configuration. Most crucially, this solo project built a strong foundation in product ownership: every technical and UX decision was made and validated independently, cultivating both confidence and full accountability for the final outcome.",
-    "techStack": ["React", "AI", "Supabase", "Tailwind CSS"],
+    "impact": "Dashboard Keuangan Toko addresses a critical gap in Indonesia's informal economy, where millions of small grocery (sembako) store owners still rely entirely on manual bookkeeping. By digitizing this workflow, the platform gives store owners real-time visibility into stock levels, daily transactions, and revenue trends, transforming raw retail data into actionable business insights at a glance. Deploying on Vercel with Supabase as the backend delivers enterprise-grade reliability with near-zero infrastructure overhead, making it genuinely accessible for small businesses without dedicated IT staff. The end-to-end ownership of this project, from database schema design to frontend delivery, demonstrates the ability to independently ship production-ready software that solves tangible, real-world problems faced by traditional retailers across Indonesia.",
+    "learning": "This project was a comprehensive exercise in full-stack independence and product ownership. Designing the database architecture in Supabase from scratch demanded a deep understanding of relational data modeling, particularly around inventory transactions, product categories, and time-series sales records. Implementing user authentication end-to-end, from registration and login flows to session persistence, solidified best practices in secure access management. On the frontend, managing complex UI states, dynamic inventory tables, form validations, and real-time data fetching, deepened proficiency with React's state and effect patterns. Deploying to Vercel and connecting it to a live Supabase instance provided hands-on experience with environment variable management and production configuration. Most crucially, this solo project built a strong foundation in product ownership: every technical and UX decision was made and validated independently, cultivating both confidence and full accountability for the final outcome.",
+    "techStack": [
+      "React",
+      "AI",
+      "Supabase",
+      "Tailwind CSS"
+    ],
     "thumbnail": "/images/keuangan.png",
     "media": {
       "images": [],

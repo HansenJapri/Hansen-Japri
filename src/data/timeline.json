@@ -6,18 +6,26 @@
     "organization": "Universitas Multimedia Nusantara",
     "startDate": "2024-01",
     "endDate": "2028-12",
-    "description": "Pursuing a Bachelor's degree in Informatics at one of Indonesia's leading technology-focused universities. Building deep expertise in software engineering, system architecture, and AI — with a strong emphasis on real-world, product-driven learning.",
-    "highlights": ["Major: Informatics", "Expected graduation: 2028", "Focus: AI, System Architecture & Software Engineering"]
+    "description": "Pursuing a Bachelor's degree in Informatics at one of Indonesia's leading technology-focused universities. Building deep expertise in software engineering, system architecture, and AI, with a strong emphasis on real-world, product-driven learning.",
+    "highlights": [
+      "Major: Informatics",
+      "Expected graduation: 2028",
+      "Focus: AI, System Architecture & Software Engineering"
+    ]
   },
   {
     "id": "tl-training-1",
     "type": "education",
-    "title": "Certified Ethical Hacker (CEH) — Penetration Testing Training",
+    "title": "Certified Ethical Hacker (CEH), Penetration Testing Training",
     "organization": "Course-Net",
     "startDate": "2026-01",
     "endDate": "Present",
     "description": "Undergoing structured professional training in ethical hacking and penetration testing under the globally recognized CEH framework. Developing hands-on competency in identifying, exploiting, and remediating security vulnerabilities across modern systems.",
-    "highlights": ["CEH-aligned curriculum", "Penetration testing & vulnerability assessment", "Ongoing — 2026 to present"]
+    "highlights": [
+      "CEH-aligned curriculum",
+      "Penetration testing & vulnerability assessment",
+      "Ongoing, 2026 to present"
+    ]
   },
   {
     "id": "tl-training-2",
@@ -26,18 +34,26 @@
     "organization": "ITBOX",
     "startDate": "2024-01",
     "endDate": "2024-01",
-    "description": "Completed an intensive full-stack web development training program, covering modern JavaScript ecosystems from frontend to backend — including React, Node.js, and database integration.",
-    "highlights": ["Advanced level certification", "Full-stack JavaScript", "React & Node.js"]
+    "description": "Completed an intensive full-stack web development training program, covering modern JavaScript ecosystems from frontend to backend, including React, Node.js, and database integration.",
+    "highlights": [
+      "Advanced level certification",
+      "Full-stack JavaScript",
+      "React & Node.js"
+    ]
   },
   {
     "id": "tl-training-3",
     "type": "education",
     "title": "Software Architecture & Design of Modern Large Scale Systems",
-    "organization": "Udemy — Top Developer Academy LLC",
+    "organization": "Udemy, Top Developer Academy LLC",
     "startDate": "2026-08-09",
     "endDate": "2026-08-09",
     "description": "Learned how to design large-scale software system architectures capable of serving millions of concurrent users, deepening the ability to analyze technical requirements, design efficient APIs, and maintain system performance, scalability, and availability. Explored key components of distributed systems, including DNS, Load Balancers, Message Brokers, API Gateways, and CDNs, and studied global-scale data management strategies, real-time data stream processing, and Big Data architecture patterns. This learning strengthened my mindset as a Software Architect to design fault-tolerant systems ready for large-scale enterprise deployment.",
-    "highlights": ["Distributed systems: DNS, load balancers, message brokers, API gateways, CDNs", "Global-scale data management & real-time stream processing", "Big Data architecture patterns & fault-tolerant design"]
+    "highlights": [
+      "Distributed systems: DNS, load balancers, message brokers, API gateways, CDNs",
+      "Global-scale data management & real-time stream processing",
+      "Big Data architecture patterns & fault-tolerant design"
+    ]
   },
   {
     "id": "tl-training-4",
@@ -47,7 +63,11 @@
     "startDate": "2026-07-27",
     "endDate": "2026-07-27",
     "description": "Maximizes analytical precision and minimizes AI-generated misinformation across business strategy, project management, and technical systems development (coding & backend). Achieved by applying structured critical thinking frameworks such as the Socratic Method, Bloom's Taxonomy, and the RED Model combined with strong domain fundamentals and practical fact-checking techniques to thoroughly verify AI outputs prior to final execution.",
-    "highlights": ["Socratic Method, Bloom's Taxonomy & the RED Model", "AI-output verification & fact-checking discipline", "Applied across business strategy, PM, and backend systems"]
+    "highlights": [
+      "Socratic Method, Bloom's Taxonomy & the RED Model",
+      "AI-output verification & fact-checking discipline",
+      "Applied across business strategy, PM, and backend systems"
+    ]
   },
   {
     "id": "tl-training-5",
@@ -57,17 +77,25 @@
     "startDate": "2025",
     "endDate": "2025",
     "description": "Completed Dicoding's Backend Developer JavaScript pathway, covering RESTful API development and cloud-integrated backend architecture.",
-    "highlights": ["Developed scalable RESTful APIs using Node.js and JavaScript following clean architecture principles.", "Designed secure system architectures integrated with Google Cloud infrastructure and services."]
+    "highlights": [
+      "Developed scalable RESTful APIs using Node.js and JavaScript following clean architecture principles.",
+      "Designed secure system architectures integrated with Google Cloud infrastructure and services."
+    ]
   },
   {
     "id": "tl-work-1",
     "type": "work",
-    "title": "Founder, CEO & Full-Stack Developer — Software House",
-    "organization": "Self-Founded",
-    "startDate": "2026-05",
+    "title": "Founder at Loka Ark Tech",
+    "organization": "Loka Ark Tech",
+    "startDate": "2026-09",
     "endDate": "Present",
-    "description": "Founded and solely operate a software house building dynamic company-profile and portfolio websites — web-only builds designed to present a client's business or personal work, always shipped with a custom admin panel so the client can add, edit, and delete their own site content without touching code. As the sole team member, I personally cover every function: CEO, Project Manager, Full-Stack Developer, and UI/UX Designer, owning business strategy, client relations, project scoping, and technical delivery end to end.",
-    "highlights": ["Solo-run — CEO, PM, Developer & UI/UX in one", "Dynamic company-profile & portfolio websites with a custom CMS admin panel", "Web only — no mobile or desktop app development"]
+    "description": "We craft high-performance, dynamic company profile websites paired with an intuitive custom admin panel.\n\nWhy Choose Us?\n• Total Content Independence: Easily update your portfolio, services, and company updates anytime without paying extra developer fees or touching code.\n• Fast & Custom-Built: Stand out with a sleek, mobile-responsive design built to reflect your brand identity, not a slow generic template.\n• Hassle-Free Delivery: Get a complete, production-ready website designed to convert visitors into clients with minimal operational friction.\n\nReady to elevate your online presence?\nDM us on Instagram: @lokaark_tech to request a custom quote!",
+    "highlights": [
+      "Total Content Independence, update content without developer fees",
+      "Fast & Custom-Built, sleek, mobile-responsive, brand-reflective design",
+      "Hassle-Free Delivery, production-ready websites that convert visitors into clients",
+      "Instagram: @lokaark_tech"
+    ]
   },
   {
     "id": "tl-work-5",
@@ -77,7 +105,11 @@
     "startDate": "2026-07-29",
     "endDate": "2026-07-29",
     "description": "Completed JPMorgan Chase's Investment Banking Virtual Experience Program via Forage, simulating the target-identification, valuation, and client-advisory workflow of a real M&A engagement.",
-    "highlights": ["Identified an ideal M&A target for a client based on an assessment of their strategic and financial criteria.", "Constructed a DCF model to calculate the valuation of the M&A target and adjusted the model to account for a competitor bid and supply chain interruption.", "Created a 2-pager for the client containing a company profile and summary of the auction process."]
+    "highlights": [
+      "Identified an ideal M&A target for a client based on an assessment of their strategic and financial criteria.",
+      "Constructed a DCF model to calculate the valuation of the M&A target and adjusted the model to account for a competitor bid and supply chain interruption.",
+      "Created a 2-pager for the client containing a company profile and summary of the auction process."
+    ]
   },
   {
     "id": "tl-work-6",
@@ -87,66 +119,98 @@
     "startDate": "2026-07-28",
     "endDate": "2026-07-28",
     "description": "Completed JPMorgan Chase's Software Engineering Virtual Experience Program via Forage, building a Kafka-integrated Spring Boot microservice for real-time transaction processing.",
-    "highlights": ["Integrated Kafka into a Spring Boot microservice to consume and deserialize high-volume transaction messages using a configurable topic and embedded Kafka test framework.", "Implemented transaction validation and persistence logic with Spring Data JPA and an H2 SQL database, including entity modeling and balance updates across relational User records.", "Connected the service to an external REST Incentive API using RestTemplate, processing incentive responses and incorporating them into transactional workflows.", "Developed a REST endpoint for querying user balances, returning JSON responses through a Spring controller while maintaining clean architectural boundaries.", "Verified system behavior using Maven test suites and debugger-driven inspection, ensuring reliability across message ingestion, database operations, and external API interactions."]
+    "highlights": [
+      "Integrated Kafka into a Spring Boot microservice to consume and deserialize high-volume transaction messages using a configurable topic and embedded Kafka test framework.",
+      "Implemented transaction validation and persistence logic with Spring Data JPA and an H2 SQL database, including entity modeling and balance updates across relational User records.",
+      "Connected the service to an external REST Incentive API using RestTemplate, processing incentive responses and incorporating them into transactional workflows.",
+      "Developed a REST endpoint for querying user balances, returning JSON responses through a Spring controller while maintaining clean architectural boundaries.",
+      "Verified system behavior using Maven test suites and debugger-driven inspection, ensuring reliability across message ingestion, database operations, and external API interactions."
+    ]
   },
   {
     "id": "tl-org-1",
     "type": "work",
-    "title": "Vice Chairman — UMN Programming Club",
+    "title": "Vice Chairman, UMN Programming Club",
     "organization": "Universitas Multimedia Nusantara",
     "startDate": "2025-09",
     "endDate": "2026-09",
-    "description": "Serving as Vice Chairman of the UMN Programming Club, collaborating with the executive board (BPH) to drive the club's vision and organize flagship annual events — including an internal competitive programming contest open to all UMN students, and the Awarding Night as the celebratory grand finale.",
-    "highlights": ["Internal competitive programming contest", "Awarding Night — annual grand finale", "Executive board (BPH) leadership", "Directed social media, web, and contest initiatives via cross-divisional coordination.", "Directed events planning and team leadership initiatives, achieving operational targets and ensuring high standards were met across 2 events."]
+    "description": "Serving as Vice Chairman of the UMN Programming Club, collaborating with the executive board (BPH) to drive the club's vision and organize flagship annual events, including an internal competitive programming contest open to all UMN students, and the Awarding Night as the celebratory grand finale.",
+    "highlights": [
+      "Internal competitive programming contest",
+      "Awarding Night, annual grand finale",
+      "Executive board (BPH) leadership",
+      "Directed social media, web, and contest initiatives via cross-divisional coordination.",
+      "Directed events planning and team leadership initiatives, achieving operational targets and ensuring high standards were met across 2 events."
+    ]
   },
   {
     "id": "tl-achievement-1",
     "type": "achievement",
-    "title": "Finalist — Garuda Hacks 6.0",
+    "title": "Finalist, Garuda Hacks 6.0",
     "organization": "Garuda Hacks",
     "startDate": "2026-07-24",
     "endDate": "2026-07-26",
-    "description": "Competed in Garuda Hacks 6.0, one of Indonesia's most prestigious hackathons, as part of a collaborative team. Built LeftOver — an AI-powered food rescue marketplace — over the course of the event, and advanced to the Finalist stage in recognition of the solution's innovation and real-world impact.",
-    "highlights": ["Finalist — Garuda Hacks 6.0", "Built LeftOver in 30 hours", "AI-powered food waste solution"]
+    "description": "Competed in Garuda Hacks 6.0, one of Indonesia's most prestigious hackathons, as part of a collaborative team. Built LeftOver, an AI-powered food rescue marketplace, over the course of the event, and advanced to the Finalist stage in recognition of the solution's innovation and real-world impact.",
+    "highlights": [
+      "Finalist, Garuda Hacks 6.0",
+      "Built LeftOver in 30 hours",
+      "AI-powered food waste solution"
+    ]
   },
   {
     "id": "tl-achievement-2",
     "type": "achievement",
-    "title": "Top 6 Finalist — UMN × CIMB Niaga Project Collaboration",
+    "title": "Top 6 Finalist, UMN × CIMB Niaga Project Collaboration",
     "organization": "Universitas Multimedia Nusantara × CIMB Niaga",
     "startDate": "2025-12",
     "endDate": "2025-12",
-    "description": "Led the project as Project Manager for a university-industry collaboration between UMN and CIMB Niaga. The team successfully delivered a comprehensive project proposal and achieved a Top 6 Finalist placement — recognized for strategic thinking, structured project management, and the quality of the final deliverable.",
-    "highlights": ["Top 6 Finalist", "Role: Project Manager", "University × Industry collaboration"]
+    "description": "Led the project as Project Manager for a university-industry collaboration between UMN and CIMB Niaga. The team successfully delivered a comprehensive project proposal and achieved a Top 6 Finalist placement, recognized for strategic thinking, structured project management, and the quality of the final deliverable.",
+    "highlights": [
+      "Top 6 Finalist",
+      "Role: Project Manager",
+      "University × Industry collaboration"
+    ]
   },
   {
     "id": "tl-work-2",
     "type": "work",
-    "title": "Founder — Reed Diffuser Business",
+    "title": "Founder, Reed Diffuser Business",
     "organization": "Self-Founded",
     "startDate": "2025-05",
     "endDate": "2026-02",
-    "description": "Independently founded and operated a premium home fragrance business specializing in reed diffusers. Managed the full business cycle — from product curation and branding to multi-channel sales and customer engagement — across Instagram, WhatsApp, and TikTok Shop.",
-    "highlights": ["Multi-channel sales: Instagram, WhatsApp, TikTok Shop", "Solo business owner", "End-to-end operations management"]
+    "description": "Independently founded and operated a premium home fragrance business specializing in reed diffusers. Managed the full business cycle, from product curation and branding to multi-channel sales and customer engagement, across Instagram, WhatsApp, and TikTok Shop.",
+    "highlights": [
+      "Multi-channel sales: Instagram, WhatsApp, TikTok Shop",
+      "Solo business owner",
+      "End-to-end operations management"
+    ]
   },
   {
     "id": "tl-work-3",
     "type": "work",
-    "title": "Co-Founder — Custom & Designed Clothing Brand",
+    "title": "Co-Founder, Custom & Designed Clothing Brand",
     "organization": "Self-Founded (Partnership)",
     "startDate": "2023-01",
     "endDate": "2024-06",
-    "description": "Co-founded a fashion micro-brand together with a business partner — originating the concept and driving its execution jointly — offering self-designed and custom-printed apparel. Handled brand identity, product design, and sales operations through Instagram and WhatsApp, building a loyal customer base through personalized offerings.",
-    "highlights": ["Co-founded with a business partner (2 members total)", "Original design & custom orders", "Sales via Instagram & WhatsApp"]
+    "description": "Co-founded a fashion micro-brand together with a business partner, originating the concept and driving its execution jointly, offering self-designed and custom-printed apparel. Handled brand identity, product design, and sales operations through Instagram and WhatsApp, building a loyal customer base through personalized offerings.",
+    "highlights": [
+      "Co-founded with a business partner (2 members total)",
+      "Original design & custom orders",
+      "Sales via Instagram & WhatsApp"
+    ]
   },
   {
     "id": "tl-work-4",
     "type": "work",
-    "title": "Founder — Custom Phone Case Business",
+    "title": "Founder, Custom Phone Case Business",
     "organization": "Self-Founded",
     "startDate": "2021-01",
     "endDate": "2021-06",
-    "description": "Launched a solo entrepreneurial venture at age 15 during the COVID-19 pandemic while in Grade 9 of junior high school. Designed, sourced, and sold custom phone cases to peers and online customers via Instagram and WhatsApp — demonstrating early commercial initiative and self-sufficiency under challenging circumstances.",
-    "highlights": ["Started at age 15 (Grade 9 SMP)", "During COVID-19 pandemic", "Solo-operated via Instagram & WhatsApp"]
+    "description": "Launched a solo entrepreneurial venture at age 15 during the COVID-19 pandemic while in Grade 9 of junior high school. Designed, sourced, and sold custom phone cases to peers and online customers via Instagram and WhatsApp, demonstrating early commercial initiative and self-sufficiency under challenging circumstances.",
+    "highlights": [
+      "Started at age 15 (Grade 9 SMP)",
+      "During COVID-19 pandemic",
+      "Solo-operated via Instagram & WhatsApp"
+    ]
   }
 ]

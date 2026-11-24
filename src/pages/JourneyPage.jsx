@@ -1,78 +1,58 @@
-import { PageTransition } from '../components/ui/AnimatedSection'
-import SectionHeading from '../components/ui/SectionHeading'
-import Timeline from '../components/journey/Timeline'
-import CertCard from '../components/journey/CertCard'
-import Button from '../components/ui/Button'
 import { Download } from 'lucide-react'
+import { PageTransition, Reveal } from '../components/ui/AnimatedSection'
+import SectionHeading from '../components/ui/SectionHeading'
+import Button from '../components/ui/Button'
+import Timeline from '../components/journey/Timeline'
+import Certificates from '../components/journey/Certificates'
 import timelineData from '../data/timeline.json'
-import certifications from '../data/certifications.json'
 import personalData from '../data/personal.json'
 
-/* Newest first. "Present" only ever appears as an end date, so sorting
-   on startDate alone keeps ongoing entries at the top of their stream. */
+/* Newest first. "Present" only appears as an end date, so sorting on the
+   start date keeps ongoing entries at the top of their group. */
 const byRecency = (a, b) => new Date(b.startDate) - new Date(a.startDate)
+const byType = (type) => timelineData.filter((i) => i.type === type).sort(byRecency)
 
-const byType = (type) => timelineData.filter((item) => item.type === type).sort(byRecency)
-
-const work = byType('work')
-const achievements = byType('achievement')
-const education = byType('education')
+const groups = [
+  { id: 'experience', title: 'Experience', items: byType('work') },
+  { id: 'achievements', title: 'Achievements', items: byType('achievement') },
+  { id: 'education', title: 'Education & training', items: byType('education') },
+]
 
 export default function JourneyPage() {
   return (
     <PageTransition>
-      {/* ── 02 • Work history ─────────────────────────────────── */}
-      <section className="section-container py-12 md:py-18">
+      <section className="container-page pt-14 md:pt-20">
         <SectionHeading
-          title="Work History & Leadership"
-          description="Founding and leading ventures across software, retail, and fashion, alongside simulated Wall Street engineering and banking experience."
-          action={
-            <Button
-              variant="secondary"
-              size="sm"
-              icon={Download}
-              href={personalData.resumeUrl}
-              download="Hansen Japri CV Resume.pdf"
-            >
-              Curriculum Vitae
-            </Button>
-          }
+          as="h1"
+          title="Journey"
+          description="Building ventures since junior high, now focused on AI product engineering and software engineering."
         />
-        <Timeline items={work} />
+        <Reveal>
+          <Button
+            href={personalData.resumeUrl}
+            download="Hansen Japri CV Resume.pdf"
+            variant="secondary"
+            icon={Download}
+          >
+            Download CV
+          </Button>
+        </Reveal>
       </section>
 
-      {/* ── 03 • Achievements ─────────────────────────────────── */}
-      <section className="section-container pb-12 md:pb-18">
-        <SectionHeading
-          title="Achievements & Recognition"
-          description="Competitive results from national hackathons and university–industry collaborations."
-        />
-        <Timeline items={achievements} />
-      </section>
+      {groups.map((group) => (
+        <section key={group.id} id={group.id} className="container-page pt-20 md:pt-28 scroll-mt-20">
+          <Reveal>
+            <h2 className="text-h2 mb-8">{group.title}</h2>
+          </Reveal>
+          <Timeline items={group.items} />
+        </section>
+      ))}
 
-      {/* ── 04 • Education ────────────────────────────────────── */}
-      <section className="section-container pb-12 md:pb-18">
-        <SectionHeading
-          title="Education & Training"
-          description="Formal informatics study alongside professional training in software architecture, full-stack development, applied AI, and offensive security."
-        />
-        <Timeline items={education} />
-      </section>
-
-      {/* ── 05 • Credentials ──────────────────────────────────── */}
-      <section className="section-container pb-18 md:pb-26">
-        <div className="rounded-2xl bg-surface-high border border-line p-5 sm:p-8 md:p-12">
-          <SectionHeading
-            title="Certifications & Honors"
-            description="Every credential below links to its original certificate document."
-          />
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            {certifications.map((cert, index) => (
-              <CertCard key={cert.id} cert={cert} index={index} />
-            ))}
-          </div>
-        </div>
+      <section id="certificates" className="container-page py-20 md:py-28 scroll-mt-20">
+        <Reveal>
+          <h2 className="text-h2 mb-8">Certificates & honors</h2>
+        </Reveal>
+        <Certificates />
       </section>
     </PageTransition>
   )

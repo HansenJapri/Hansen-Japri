@@ -1,65 +1,67 @@
 import { motion } from 'framer-motion'
 
-const pageVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-}
+export const EASE_OUT = [0.23, 1, 0.32, 1]
 
 export function PageTransition({ children }) {
   return (
     <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -8, transition: { duration: 0.18 } }}
+      transition={{ duration: 0.4, ease: EASE_OUT }}
     >
       {children}
     </motion.div>
   )
 }
 
-export function AnimatedSection({ children, className = '', delay = 0 }) {
+/* Headline whose words flip up one after another, each hinged on its
+   baseline, when the heading scrolls into view. */
+export function SplitHeading({ text, className = '', as = 'h2' }) {
+  const Tag = motion[as]
+  const words = text.split(' ')
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-      className={className}
-    >
-      {children}
-    </motion.section>
-  )
-}
-
-export function StaggerContainer({ children, className = '' }) {
-  return (
-    <motion.div
+    <Tag
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-50px' }}
-      variants={{
-        visible: { transition: { staggerChildren: 0.1 } },
-      }}
+      whileInView="shown"
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ staggerChildren: 0.07 }}
+      aria-label={text}
       className={className}
     >
-      {children}
-    </motion.div>
+      {words.map((word, i) => (
+        <span key={i} aria-hidden="true" className="inline-block [perspective:800px]">
+          <motion.span
+            className="inline-block pb-[0.08em]"
+            style={{ transformOrigin: '50% 100%' }}
+            variants={{
+              hidden: { opacity: 0, rotateX: -80, y: '0.3em' },
+              shown: { opacity: 1, rotateX: 0, y: 0, transition: { duration: 0.9, ease: EASE_OUT } },
+            }}
+          >
+            {word}
+          </motion.span>
+          {i < words.length - 1 && ' '}
+        </span>
+      ))}
+    </Tag>
   )
 }
 
-export function StaggerItem({ children, className = '' }) {
+/* Enters once when scrolled into view: the block tips up from a slight
+   backward lean and its blur clears, so it lands in place with depth. */
+export function Reveal({ children, className = '', delay = 0, as = 'div' }) {
+  const Tag = motion[as]
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
-      }}
+    <Tag
+      initial={{ opacity: 0, y: 26, rotateX: 14, filter: 'blur(6px)' }}
+      whileInView={{ opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)' }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.8, delay, ease: EASE_OUT }}
+      style={{ transformPerspective: 1000, transformOrigin: '50% 100%' }}
       className={className}
     >
       {children}
-    </motion.div>
+    </Tag>
   )
 }

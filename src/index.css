@@ -1,246 +1,156 @@
 @import "tailwindcss";
 
 /* ============================================================
-   WARM EDITORIAL STUDIO — Design Tokens (Tailwind v4 @theme)
-   Palette: warm linen canvas, espresso ink, studio moss, raw umber.
-   No pure #FFFFFF surfaces, no pitch black type.
+   GRAPHITE / VERMILION
+   One dark theme for the whole site. Warm graphite ground, bone type,
+   a single vermilion accent used sparingly (primary actions, the
+   active request path in the 3D scene, focus).
+   Shape rule: interactive controls are full pills; panels and images
+   use --radius-panel (16px); small chips use pills too.
    ============================================================ */
 @theme {
-  /* ---- Typography families ---- */
-  --font-display: 'Playfair Display', 'Iowan Old Style', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
 
-  /* ---- Surfaces (tonal ladder, level 0 → 4) ---- */
-  --color-canvas: #fbf9f5;          /* warm linen — page ground */
-  --color-surface-low: #f8f3eb;
-  --color-surface: #f2ede5;
-  --color-surface-high: #ece7df;    /* soft sandstone — nested cards */
-  --color-surface-highest: #e7e2da;
+  --color-ground: #0d0e0c;
+  --color-raised: #141512;
+  --color-raised-2: #1b1c19;
+  --color-raised-3: #24251f;
 
-  /* ---- Ink ---- */
-  --color-ink: #1a1918;             /* warm espresso — display type */
-  --color-ink-muted: #4a4640;
-  --color-ink-faint: #8c867d;       /* placeholders, tertiary meta */
+  --color-fg: #ecebe4;
+  --color-fg-muted: #a6a59c;
+  --color-fg-faint: #85847a;
 
-  /* ---- Structure ---- */
-  --color-line: #e3ddd3;            /* muted clay — 1px hairlines */
-  --color-line-strong: #ccc5bd;
+  --color-line: rgb(236 235 228 / 0.09);
+  --color-line-strong: rgb(236 235 228 / 0.18);
 
-  /* ---- Accents ---- */
-  --color-moss: #4a5340;            /* studio moss — focal, active */
-  --color-moss-deep: #21261f;       /* deep moss charcoal — inverse blocks */
-  --color-moss-soft: #dce6cd;       /* secondary container fill */
-  --color-moss-ink: #414a37;        /* on soft moss */
-  --color-umber: #8c6a48;           /* raw amber umber — metadata, underlines */
-  --color-on-dark: #f5f0e8;         /* type on moss-deep / moss */
+  --color-accent: #f0643a;
+  --color-accent-hover: #ff7650;
+  --color-on-accent: #160b06;
 
-  /* ---- Type scale (editorial) ---- */
-  --text-hero: 5.25rem;             /* 84px */
-  --text-hero--line-height: 5.75rem;
-  --text-hero--letter-spacing: -0.03em;
-  --text-hero--font-weight: 400;
+  --radius-panel: 1rem;
 
-  --text-hero-sm: 3rem;             /* 48px — mobile hero */
-  --text-hero-sm--line-height: 3.375rem;
-  --text-hero-sm--letter-spacing: -0.02em;
-  --text-hero-sm--font-weight: 400;
+  --text-display: clamp(3.25rem, 9vw, 6rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.045em;
 
-  --text-headline: 2.75rem;         /* 44px — section titles */
-  --text-headline--line-height: 3.25rem;
-  --text-headline--letter-spacing: -0.02em;
-  --text-headline--font-weight: 400;
+  --text-h1: clamp(2.5rem, 5.5vw, 4.25rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.04em;
 
-  --text-headline-sm: 2rem;         /* 32px — mobile section titles */
-  --text-headline-sm--line-height: 2.5rem;
-  --text-headline-sm--letter-spacing: -0.01em;
-  --text-headline-sm--font-weight: 400;
+  --text-h2: clamp(2rem, 3.6vw, 3rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.035em;
 
-  --text-title: 1.75rem;            /* 28px — card + subsection titles */
-  --text-title--line-height: 2.25rem;
-  --text-title--letter-spacing: -0.01em;
-  --text-title--font-weight: 400;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.02em;
 
-  --text-quote: 2rem;               /* 32px — serif italic accents */
-  --text-quote--line-height: 2.625rem;
-  --text-quote--letter-spacing: -0.01em;
-  --text-quote--font-weight: 400;
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.6;
 
-  --text-numeric: 2.25rem;          /* 36px — serif metrics */
-  --text-numeric--line-height: 2.5rem;
-  --text-numeric--font-weight: 400;
-
-  --text-lead: 1.125rem;            /* 18px */
-  --text-lead--line-height: 1.75rem;
-
-  --text-body: 0.9375rem;           /* 15px */
-  --text-body--line-height: 1.5rem;
-
-  --text-note: 0.8125rem;           /* 13px */
-  --text-note--line-height: 1.25rem;
-
-  --text-caps: 0.6875rem;           /* 11px — kickers, chips, labels */
-  --text-caps--line-height: 1rem;
-  --text-caps--letter-spacing: 0.12em;
-  --text-caps--font-weight: 600;
-
-  /* ---- Elevation: ambient warm daylight, never harsh ---- */
-  --shadow-float: 0 12px 32px -4px rgb(43 41 39 / 0.05), 0 4px 12px -2px rgb(43 41 39 / 0.03);
-  --shadow-lift: 0 20px 48px -8px rgb(43 41 39 / 0.10), 0 6px 16px -4px rgb(43 41 39 / 0.05);
-
-  /* ---- Motion ---- */
-  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-/* ===== BASE ===== */
 @layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
   html {
-    scroll-behavior: smooth;
+    color-scheme: dark;
     scrollbar-width: thin;
-    scrollbar-color: var(--color-line-strong) var(--color-canvas);
+    scrollbar-color: var(--color-raised-3) var(--color-ground);
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
     font-family: var(--font-sans);
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
-    font-size: var(--text-body);
+    background: var(--color-ground);
+    color: var(--color-fg);
+    font-size: 1rem;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'ss01', 'cv11';
   }
 
-  /* Serif display type is optically lighter — never let it render synthetic bold */
-  h1, h2, h3 {
-    font-weight: 400;
+  h1, h2, h3, h4 {
+    font-weight: 560;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
-    background: var(--color-moss-soft);
-    color: var(--color-moss-ink);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  input, textarea {
+    caret-color: var(--color-accent);
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
   }
 }
 
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-canvas);
-}
-
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-ground); }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-line-strong);
+  background: var(--color-raised-3);
+  border: 2px solid var(--color-ground);
   border-radius: 9999px;
 }
+::-webkit-scrollbar-thumb:hover { background: #34352e; }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-ink-faint);
+/* Fixed, non-scrolling grain. Lives on a pseudo-element so it never
+   repaints with scroll. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* ===== LAYOUT CONTAINER =====
-   1280px max width; margins 1.25rem mobile → 2rem tablet → 3rem desktop */
-.section-container {
+.container-page {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1320px;
+  margin-inline: auto;
   padding-inline: 1.25rem;
 }
+@media (min-width: 768px) { .container-page { padding-inline: 2rem; } }
+@media (min-width: 1024px) { .container-page { padding-inline: 3rem; } }
 
-@media (min-width: 768px) {
-  .section-container {
-    padding-inline: 2rem;
-  }
+/* Text link with an underline that draws in from the left. */
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 320ms var(--ease-out), color 200ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .link-draw:hover { background-size: 100% 1px; }
 }
 
-@media (min-width: 1024px) {
-  .section-container {
-    padding-inline: 3rem;
-  }
+/* Pressable feedback shared by every button-like control. */
+.press {
+  transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease, border-color 200ms ease;
 }
+.press:active { transform: scale(0.97); }
 
-/* ===== EDITORIAL PRIMITIVES ===== */
-
-/* Uppercase kicker / label — used for section numbers, chips, meta */
-.kicker {
-  font-family: var(--font-sans);
-  font-size: var(--text-caps);
-  line-height: 1rem;
-  letter-spacing: 0.12em;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-/* Monumental serif set in caps needs positive tracking, not the tight
-   display tracking, or the letterforms collide. */
-.display-caps {
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-}
-
-/* Hairline rule that fades at both ends — used between editorial chapters */
-.hairline {
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--color-line-strong) 15%,
-    var(--color-line-strong) 85%,
-    transparent
-  );
-}
-
-/* Underline accent on serif italic phrases */
-.accent-underline {
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--color-umber) 45%, transparent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.35em;
-}
-
-/* Frosted linen overlay — nav backdrop, sticky bars */
-.frosted {
-  background: rgb(251 249 245 / 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* Level 1 tonal card: sandstone plane + hairline, no drop shadow */
-.card-tonal {
-  background: var(--color-surface-low);
-  border: 1px solid var(--color-line);
-}
-
-/* Animated link underline, warm umber */
-.link-underline {
-  position: relative;
-  text-decoration: none;
-}
-
-.link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--color-umber);
-  transition: width 0.35s var(--ease-editorial);
-}
-
-.link-underline:hover::after {
-  width: 100%;
-}
-
-/* Clamp helper for card summaries */
 .clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -248,8 +158,37 @@
   overflow: hidden;
 }
 
+/* Still portrait (fallback for no WebGL / reduced motion): warm
+   monochrome grade with every edge fading into the page. */
+.portrait-still {
+  filter: contrast(1.06) brightness(0.95);
+  -webkit-mask-image: radial-gradient(ellipse 62% 68% at 50% 40%, #000 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 62% 68% at 50% 40%, #000 45%, transparent 100%);
+}
+
+/* Blueprint floor: a perspective grid that slowly travels toward the
+   viewer. Used as the backdrop of the Software Architecture tile. */
+.grid-floor {
+  perspective: 520px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 35%, #000 70%, transparent 100%);
+}
+.grid-floor__plane {
+  position: absolute;
+  inset: -60% -40% 0;
+  transform: rotateX(62deg);
+  transform-origin: 50% 100%;
+  background-image:
+    linear-gradient(to right, rgb(236 235 228 / 0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(236 235 228 / 0.10) 1px, transparent 1px);
+  background-size: 44px 44px;
+  animation: grid-travel 6s linear infinite;
+}
+@keyframes grid-travel {
+  to { background-position: 0 44px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  .press:active { transform: none; }
+  .grid-floor__plane { animation: none; }
 }

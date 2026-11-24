@@ -1,82 +1,130 @@
 [
   {
-    "id": "cert-1",
-    "name": "Finalist — Garuda Hacks 6.0",
-    "issuer": "Garuda Hacks",
-    "date": "2026-07",
-    "verificationUrl": "/certificate/Finalist Garuda Hacks 6.0.pdf",
-    "category": "Achievement"
+    "id": "action-ai-startup",
+    "name": "Action AI Startup University",
+    "issuer": "Underdogs",
+    "date": "2026-11-06",
+    "category": "Business",
+    "file": null
   },
   {
-    "id": "cert-2",
-    "name": "Full-Stack JavaScript Web Developer (Advanced Level)",
-    "issuer": "ITBOX",
-    "date": "2024",
-    "verificationUrl": "/certificate/ITBox-Certificate_Belajar-Menjadi-Full-Stack-JavaScript-Web-Developer-Tingkat-Mahir_Hansen-Japri.pdf",
-    "category": "Development"
+    "id": "aws-ai-academy",
+    "name": "AWS AI Academy Intermediate",
+    "issuer": "Dicoding",
+    "date": "2026-09-03",
+    "category": "Software & AI",
+    "file": null
   },
   {
-    "id": "cert-3",
-    "name": "Evaluation Certificate — CEH Penetration Testing",
-    "issuer": "Course-Net (CEH Program)",
-    "date": "2026-01",
-    "verificationUrl": "/certificate/ECC-Evaluation-Certificate.pdf",
-    "category": "Cybersecurity"
-  },
-  {
-    "id": "cert-4",
-    "name": "Participant — Competitive Programming FIND IT! 2025",
-    "issuer": "FIND IT! UGM",
-    "date": "2025-01",
-    "verificationUrl": "/certificate/E-Sertifikat Peserta Competitive Programming FIND IT! 2025 Hansen Japri.pdf",
-    "category": "Achievement"
-  },
-  {
-    "id": "cert-5",
-    "name": "Participant — Competitive Programming Arkavidia! 2025",
-    "issuer": "Arkavidia ITB",
-    "date": "2025",
-    "verificationUrl": "/certificate/Participants_Certificate_Hansen Japri.pdf",
-    "category": "Achievement"
-  },
-  {
-    "id": "cert-6",
-    "name": "Top 6 Finalist Pitch Deck — UMN × CIMB Niaga",
-    "issuer": "Universitas Multimedia Nusantara × CIMB Niaga",
-    "date": "2025-12",
-    "verificationUrl": "/certificate/Finalist Pitch Deck Cimb Niaga.pdf",
-    "category": "Achievement"
-  },
-  {
-    "id": "cert-7",
-    "name": "Software Engineering Job Simulation",
-    "issuer": "JPMorgan Chase & Co. (Forage)",
-    "date": "2026-07-28",
-    "verificationUrl": "/certificate/JPMorgan - Software Engineering Job simulation.pdf",
-    "category": "Development"
-  },
-  {
-    "id": "cert-8",
-    "name": "Investment Banking Job Simulation",
-    "issuer": "JPMorgan Chase & Co. (Forage)",
-    "date": "2026-07-29",
-    "verificationUrl": "/certificate/JPMorgan Investment Banking Job Simulation.pdf",
-    "category": "Finance"
-  },
-  {
-    "id": "cert-9",
+    "id": "software-architecture-udemy",
     "name": "Software Architecture & Design of Modern Large Scale Systems",
-    "issuer": "Udemy — Top Developer Academy LLC",
-    "date": "2026-08",
-    "verificationUrl": "/certificate/Software Architecture & Design of Modern Large Scale Systems.jpg",
-    "category": "Architecture"
+    "issuer": "Udemy",
+    "date": "2026-08-09",
+    "category": "Software & AI",
+    "file": "/certificate/Software Architecture & Design of Modern Large Scale Systems.jpg"
   },
   {
-    "id": "cert-10",
+    "id": "jpm-investment-banking",
+    "name": "Investment Banking Job Simulation",
+    "issuer": "JPMorgan Chase",
+    "date": "2026-07-29",
+    "category": "Business",
+    "file": "/certificate/JPMorgan Investment Banking Job Simulation.pdf"
+  },
+  {
+    "id": "jpm-software-engineering",
+    "name": "Software Engineering Job Simulation",
+    "issuer": "JPMorgan Chase",
+    "date": "2026-07-28",
+    "category": "Software & AI",
+    "file": "/certificate/JPMorgan - Software Engineering Job simulation.pdf"
+  },
+  {
+    "id": "hp-critical-thinking",
     "name": "Critical Thinking in the Era of Artificial Intelligence",
-    "issuer": "HP LIFE (HP Foundation)",
-    "date": "2026-07",
-    "verificationUrl": "/certificate/屏幕截图 2026-07-27 221514.png",
-    "category": "Development"
+    "issuer": "HP LIFE",
+    "date": "2026-07-27",
+    "category": "Software & AI",
+    "file": "/certificate/屏幕截图 2026-07-27 221514.png"
+  },
+  {
+    "id": "dicoding-prompt-engineering",
+    "name": "Prompt Engineering untuk Software Developer",
+    "issuer": "Dicoding",
+    "date": "2026-06-29",
+    "category": "Software & AI",
+    "file": null
+  },
+  {
+    "id": "ceh-v13",
+    "name": "Certificate of Attendance CEH v13",
+    "issuer": "EC-Council",
+    "date": "2026-02-06",
+    "category": "Security",
+    "file": "/certificate/ECC-Evaluation-Certificate.pdf"
+  },
+  {
+    "id": "itbox-cyber-security",
+    "name": "Cyber Security Course Level Basic",
+    "issuer": "ITBOX",
+    "date": "2026-01-31",
+    "category": "Security",
+    "file": null
+  },
+  {
+    "id": "hsk-6",
+    "name": "HSK 6",
+    "issuer": "Chinese Proficiency Test",
+    "date": "2026",
+    "category": "Language",
+    "file": null
+  },
+  {
+    "id": "cimb-pitching-day",
+    "name": "Finalist, Pitching Day CIMB Niaga",
+    "issuer": "CIMB Niaga x Universitas Multimedia Nusantara",
+    "date": "2026",
+    "category": "Achievement",
+    "file": "/certificate/Finalist Pitch Deck Cimb Niaga.pdf"
+  },
+  {
+    "id": "itbox-kol",
+    "name": "KOL Management for Campaign & Branding",
+    "issuer": "ITBOX",
+    "date": "2025-08-10",
+    "category": "Business",
+    "file": null
+  },
+  {
+    "id": "garuda-hacks",
+    "name": "Finalist, GarudaHacks 6.0",
+    "issuer": "Garuda Hacks",
+    "date": "2025-07",
+    "category": "Achievement",
+    "file": "/certificate/Finalist Garuda Hacks 6.0.pdf"
+  },
+  {
+    "id": "itbox-fullstack",
+    "name": "Full Stack JavaScript Web Developer Advanced",
+    "issuer": "ITBOX",
+    "date": "2025-06-20",
+    "category": "Software & AI",
+    "file": "/certificate/ITBox-Certificate_Belajar-Menjadi-Full-Stack-JavaScript-Web-Developer-Tingkat-Mahir_Hansen-Japri.pdf"
+  },
+  {
+    "id": "find-it",
+    "name": "Competitive Programming Find IT",
+    "issuer": "KMTETI Fakultas Teknik UGM",
+    "date": "2025-05-17",
+    "category": "Achievement",
+    "file": "/certificate/E-Sertifikat Peserta Competitive Programming FIND IT! 2025 Hansen Japri.pdf"
+  },
+  {
+    "id": "arkavidia",
+    "name": "Competitive Programming Arkavidia 9.0",
+    "issuer": "Arkavidia",
+    "date": "2025-05-04",
+    "category": "Achievement",
+    "file": "/certificate/Participants_Certificate_Hansen Japri.pdf"
   }
 ]
